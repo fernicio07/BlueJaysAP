@@ -3,7 +3,7 @@
 <head>
 	<meta name='generator' content='ExamView HTML Generator 1.0.5'>
 	<meta name='robots' content='noindex,nofollow'>
-	<title>Chapter 2 - First Java Programs</title>
+	<title>Chapter 4: Introduction to Control Statements</title>
 	<style type='text/css'>
 		.spacer { line-height:.7em; }
 		.title { font-size:13pt; font-weight:bold; font-family:"Times New Roman", "Times", serif; color:#000000; }
@@ -15,109 +15,118 @@
 		TD.pad { padding: 0pt 4pt 0pt 4pt; }
 		.font1 { font-family:"Times New Roman", "Times", serif; }
 		.font2 { font-family:"Times New Roman", "Times", serif; }
-		.font3 { font-family:"Times New Roman", "Times", serif; }
 	</style>
 <script type='text/javascript' language='JavaScript1.1'>
 <!--
 	// Copyright (c) 2000-2008 eInstruction Corp.
-	var listMap = '11111111110111111111111111111111111000001111100';
-	var qtypeMap = '000000000012222222222222222222222227777788888BB';
-	var ansMap = new Array(47);
-	var ptsMap = new Array(47);
+	var listMap = '1111111111000001111111111111111111111110000011111000';
+	var qtypeMap = '0000000000111112222222222222222222222227777788888BBB';
+	var ansMap = new Array(52);
+	var ptsMap = new Array(52);
 	ansMap[0] = '55';
 	ptsMap[0] = 1;
 	ansMap[1] = '56';
 	ptsMap[1] = 1;
-	ansMap[2] = '57';
+	ansMap[2] = '45';
 	ptsMap[2] = 1;
-	ansMap[3] = '50';
+	ansMap[3] = '42';
 	ptsMap[3] = 1;
 	ansMap[4] = '51';
 	ptsMap[4] = 1;
-	ansMap[5] = '40';
+	ansMap[5] = '52';
 	ptsMap[5] = 1;
-	ansMap[6] = '41';
+	ansMap[6] = '53';
 	ptsMap[6] = 1;
 	ansMap[7] = '4e';
 	ptsMap[7] = 1;
 	ansMap[8] = '5d';
 	ptsMap[8] = 1;
-	ansMap[9] = '5e';
+	ansMap[9] = '4c';
 	ptsMap[9] = 1;
-	ansMap[10] = '4d2762657f6e797b796e7f6e79';
+	ansMap[10] = '4d276864657f796467';
 	ptsMap[10] = 1;
-	ansMap[11] = '4f';
+	ansMap[11] = '4a206f63796278';
 	ptsMap[11] = 1;
-	ansMap[12] = '4c';
+	ansMap[12] = '59';
 	ptsMap[12] = 1;
-	ansMap[13] = '4c';
+	ansMap[13] = '48226760686760677a6b';
 	ptsMap[13] = 1;
-	ansMap[14] = '4b';
+	ansMap[14] = '5b';
 	ptsMap[14] = 1;
 	ansMap[15] = '51';
 	ptsMap[15] = 1;
 	ansMap[16] = '53';
 	ptsMap[16] = 1;
-	ansMap[17] = '56';
+	ansMap[17] = '51';
 	ptsMap[17] = 1;
-	ansMap[18] = '51';
+	ansMap[18] = '57';
 	ptsMap[18] = 1;
-	ansMap[19] = '50';
+	ansMap[19] = '55';
 	ptsMap[19] = 1;
-	ansMap[20] = '54';
+	ansMap[20] = '51';
 	ptsMap[20] = 1;
 	ansMap[21] = '55';
 	ptsMap[21] = 1;
-	ansMap[22] = '53';
+	ansMap[22] = '56';
 	ptsMap[22] = 1;
-	ansMap[23] = '5b';
+	ansMap[23] = '5a';
 	ptsMap[23] = 1;
-	ansMap[24] = '58';
+	ansMap[24] = '5a';
 	ptsMap[24] = 1;
 	ansMap[25] = '58';
 	ptsMap[25] = 1;
-	ansMap[26] = '58';
+	ansMap[26] = '5f';
 	ptsMap[26] = 1;
 	ansMap[27] = '5d';
 	ptsMap[27] = 1;
 	ansMap[28] = '5f';
 	ptsMap[28] = 1;
-	ansMap[29] = '5f';
+	ansMap[29] = '5d';
 	ptsMap[29] = 1;
-	ansMap[30] = '5c';
+	ansMap[30] = '5b';
 	ptsMap[30] = 1;
-	ansMap[31] = '40';
+	ansMap[31] = '45';
 	ptsMap[31] = 1;
-	ansMap[32] = '40';
+	ansMap[32] = '41';
 	ptsMap[32] = 1;
-	ansMap[33] = '40';
+	ansMap[33] = '42';
 	ptsMap[33] = 1;
-	ansMap[34] = '45';
+	ansMap[34] = '46';
 	ptsMap[34] = 1;
-	ansMap[35] = '4f647364';
+	ansMap[35] = '46';
 	ptsMap[35] = 1;
-	ansMap[36] = '6776766a6372';
+	ansMap[36] = '44';
 	ptsMap[36] = 1;
-	ansMap[37] = '6f66646c62750a6f66646c';
+	ansMap[37] = '45';
 	ptsMap[37] = 1;
-	ansMap[38] = '6a677a6c6d7a';
+	ansMap[38] = '4b';
 	ptsMap[38] = 1;
-	ansMap[39] = '6e7b606d';
+	ansMap[39] = '6d6c6a7b6c646c677d';
 	ptsMap[39] = 1;
-	ansMap[40] = '4b';
+	ansMap[40] = '636469786f676f647e';
 	ptsMap[40] = 1;
-	ansMap[41] = '4f';
+	ansMap[41] = '627f6e796a7f626465';
 	ptsMap[41] = 1;
-	ansMap[42] = '49';
+	ansMap[42] = '62697f786968';
 	ptsMap[42] = 1;
-	ansMap[43] = '4e';
+	ansMap[43] = '4f626974';
 	ptsMap[43] = 1;
-	ansMap[44] = '4c';
+	ansMap[44] = '4d';
 	ptsMap[44] = 1;
-	ansMap[45] = '';
+	ansMap[45] = '4b';
 	ptsMap[45] = 1;
-	ansMap[46] = '';
+	ansMap[46] = '51';
 	ptsMap[46] = 1;
+	ansMap[47] = '54';
+	ptsMap[47] = 1;
+	ansMap[48] = '50';
+	ptsMap[48] = 1;
+	ansMap[49] = '';
+	ptsMap[49] = 1;
+	ansMap[50] = '';
+	ptsMap[50] = 1;
+	ansMap[51] = '';
+	ptsMap[51] = 1;
 	function HandleSubmit(f)
 	{
 		var	MAGIC = 840;
@@ -383,13 +392,13 @@ if (navigator.appName.indexOf("Netscape") >= 0) {
 <input type='hidden' name='instructor_org' value='CPN'>
 <input type='hidden' name='instructor_city' value='Guaynabo'>
 <input type='hidden' name='instructor_state' value='PR'>
-<input type='hidden' name='test_name' value='Chapter 2 - First Java Programs'>
+<input type='hidden' name='test_name' value='Chapter 4: Introduction to Control Statements'>
 <input type='hidden' name='other_label' value='Other'>
 <input type='hidden' name='test_mixed_questions' value='0'>
 <input type='hidden' name='score_correct' value='0'>
 <input type='hidden' name='score_possible' value='0'>
 <input type='hidden' name='score_percent' value='0'>
-<input type='hidden' name='score_subjective' value='2'>
+<input type='hidden' name='score_subjective' value='3'>
 <input type='hidden' name='score_details' value=''>
 <div class='spacer'>&nbsp;</div>
 <div class='default'>
@@ -400,7 +409,7 @@ if (navigator.appName.indexOf("Netscape") >= 0) {
 	<b>Email:</b>&nbsp;<input type='text' name='student_email' size='45'><br><br>
 	</div>
 </div>
-<div class='title'>Chapter 2 - First Java Programs</div>
+<div class='title'>Chapter 4: Introduction to Control Statements</div>
 
 <table align='left' width='100%' border='0' cellpadding='0' cellspacing='0'>
 <tr valign='top'>
@@ -422,7 +431,7 @@ statement is true or false.</i></div>
 		<p class='qnumber'>&nbsp;1.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Java bears a superficial resemblance to C++.</div>
+<div class='default'>m++ and m = m + 1 are the same thing.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -438,8 +447,8 @@ statement is true or false.</i></div>
 		<p class='qnumber'>&nbsp;2.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Java is ideally suited to developing distributed, network-based
-applications.</div>
+<div class='default'>A program used to simulate coin toss results uses a random number
+generator.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -455,7 +464,8 @@ applications.</div>
 		<p class='qnumber'>&nbsp;3.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Java applets have little risk of infecting your computer with a virus.</div>
+<div class='default'>Use an if statement to instruct a program to execute one statement if the
+condition is true, and another if the condition is false.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -471,7 +481,7 @@ applications.</div>
 		<p class='qnumber'>&nbsp;4.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Source code is the bulk of the instructions of a program.</div>
+<div class='default'>It is better to underuse braces or parentheses than to overuse them.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -487,7 +497,8 @@ applications.</div>
 		<p class='qnumber'>&nbsp;5.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>UNIX is available on any Macintosh computer that runs MacOS X.</div>
+<div class='default'>An if-else statement is commonly used to check user inputs for validity before
+processing them.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -503,8 +514,8 @@ applications.</div>
 		<p class='qnumber'>&nbsp;6.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>A DOS development environment combines an editor, Java compiler, debugger, and a
-JVM.</div>
+<div class='default'>In a while statement, if the condition is false from the outset, the
+statement(s) inside the loop never execute.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -520,8 +531,8 @@ JVM.</div>
 		<p class='qnumber'>&nbsp;7.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>The main factor affecting a program&#8217;s readability is misspelled
-words.</div>
+<div class='default'>For a loop to terminate, each pass must move the variables in the condition
+significantly closer to satisfying the condition.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -537,8 +548,7 @@ words.</div>
 		<p class='qnumber'>&nbsp;8.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>In Java, as in algebra, addition and subtraction have a higher precedence than
-multiplication and division .</div>
+<div class='default'>In a for statement, the counter is updated at the top of the loop.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -554,8 +564,7 @@ multiplication and division .</div>
 		<p class='qnumber'>&nbsp;9.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Graphics and GUI programs in Java can run either as stand-alone applications or
-as applets.</div>
+<div class='default'>A program can output data to a file.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -571,7 +580,8 @@ as applets.</div>
 		<p class='qnumber'>&nbsp;10.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Java programs accomplish many tasks by sending messages to objects.</div>
+<div class='default'>An off-by-one error occurs when the value returned is one more or less than the
+expected result.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -595,10 +605,100 @@ statement true.</i></div>
 		<p class='qnumber'>&nbsp;11.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>The main advantage of a <u>compiler</u> is that any computer can run it.
+<div class='default'>In Java, while and if-else are examples of <u>conditional</u> statements.
 ____________________</div><div style='font-size:2pt'></div>
 		<input type='text' name='MTF-11-2' size='60' maxlength='60'><br>
 		<input type='hidden' name='MTF:11'>
+
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+		<select name='MTF-12-1' align='top' onmousewheel='return(false);'>
+			<option value=' '> 
+			<option value='T'>T
+			<option value='F'>F
+		</select>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;12.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>A program that controls how many times a loop is executed is called a
+<u>task</u>-controlled loop. ____________________</div><div style='font-size:2pt'></div>
+		<input type='text' name='MTF-12-2' size='60' maxlength='60'><br>
+		<input type='hidden' name='MTF:12'>
+
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+		<select name='MTF-13-1' align='top' onmousewheel='return(false);'>
+			<option value=' '> 
+			<option value='T'>T
+			<option value='F'>F
+		</select>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;13.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>Some programmers prefer to use <u>for</u> loops instead of while loops because
+the loop control variable can be declared in its header. ____________________</div><div style='font-size:2pt'></div>
+		<input type='text' name='MTF-13-2' size='60' maxlength='60'><br>
+		<input type='hidden' name='MTF:13'>
+
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+		<select name='MTF-14-1' align='top' onmousewheel='return(false);'>
+			<option value=' '> 
+			<option value='T'>T
+			<option value='F'>F
+		</select>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;14.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>When a program responds more slowly than expected, it is reasonable to assume
+that it is stuck in an <u>overloading</u> loop. ____________________</div><div style='font-size:2pt'></div>
+		<input type='text' name='MTF-14-2' size='60' maxlength='60'><br>
+		<input type='hidden' name='MTF:14'>
+
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='top'>
+	<td></td>
+	<td></td>
+	<td>
+<div class='spacer'>&nbsp;</div>
+<div class='default'>FIGURE 4-1<br><img width='404' height='274' align='bottom' alt="nar001-1.jpg"
+src="index_files/nar001-1.jpg" border='0'></div>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+		<select name='MTF-15-1' align='top' onmousewheel='return(false);'>
+			<option value=' '> 
+			<option value='T'>T
+			<option value='F'>F
+		</select>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;15.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>Figure 4-1 above is an example of a <u>flowchart</u>.
+_________________________</div><div style='font-size:2pt'></div>
+		<input type='text' name='MTF-15-2' size='60' maxlength='60'><br>
+		<input type='hidden' name='MTF:15'>
 
 <div class='spacer'>&nbsp;</div>
 	</td>
@@ -607,104 +707,6 @@ ____________________</div><div style='font-size:2pt'></div>
 	<td colspan='3'><br>
 <div class='default'><b>Multiple Choice</b><span style='font-size:10pt'><br></span><i>Identify the
 choice that best completes the statement or answers the question.</i></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MC:12' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;12.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>Which of the following is NOT true about Java?</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
-class='default'>Java is an object-based language.</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>Java creates programs that are
-portable.</span></td></tr><tr valign='baseline'><td><div class='choice'>c.</div></td><td><span
-class='default'>The Java compiler translates into machine language.</span></td></tr><tr
-valign='baseline'><td><div class='choice'>d.</div></td><td><span class='default'>Java supports
-threads.</span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MC:13' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;13.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>Java is all of the following EXCEPT ____.</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>fast</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
-class='default'>robust</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>secure</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>portable</span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MC:14' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;14.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>A(n) ____ is a process that can run concurrently with other processes.</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>applet</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>interpreter</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>thread</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>parameter</span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MC:15' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;15.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>To run Java byte code, you must install a(n) ____.</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>GUI</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
-class='default'>IDE</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>JIT</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>JVM</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -722,13 +724,13 @@ class='choice'>d.</div></td><td><span class='default'>JVM</span></td></tr></tabl
 		<p class='qnumber'>&nbsp;16.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>A(n) ____ is a program that behaves like a computer.</div>
+<div class='default'>The decrement operator is ____.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
 valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>interpreter</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>terminal I/O</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>compiler</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>applet</span></td></tr></table></div>
+class='default'>--</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
+class='default'>/</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>++</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>!=</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -746,14 +748,13 @@ class='choice'>d.</div></td><td><span class='default'>applet</span></td></tr></t
 		<p class='qnumber'>&nbsp;17.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Some JVMs translate byte code instructions into machine language when they are
-first encountered, using the ____ technique.</div>
+<div class='default'>____ is when the same name is used for two different methods.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
 valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>IDE</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
-class='default'>variable</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>JIT</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>interpreter</span></td></tr></table></div>
+class='default'>Infinite loop</span></td><td width='4%'><div class='choice'>c.</div></td><td
+width='46%'><span class='default'>Iteration</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>Overloading</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>Sentinel</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -771,13 +772,15 @@ class='choice'>d.</div></td><td><span class='default'>interpreter</span></td></t
 		<p class='qnumber'>&nbsp;18.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>A(n) ____ is a small Java program that runs on Web pages.</div>
+<div class='default'>If a method&#8217;s signature is labeled ____, the message is sent to the
+method&#8217;s class instead of to an object.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
 valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>JIT</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
-class='default'>JVM</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>parameter</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>applet</span></td></tr></table></div>
+class='default'>class</span></td><td width='4%'><div class='choice'>c.</div></td><td
+width='46%'><span class='default'>static</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>iterative</span></td><td><div
+class='choice'>d.</div></td><td><span
+class='default'>count-controlled</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -795,17 +798,13 @@ class='choice'>d.</div></td><td><span class='default'>applet</span></td></tr></t
 		<p class='qnumber'>&nbsp;19.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>All of the following are benefits of using a terminal I/O interface EXCEPT
-____.</div>
+<div class='default'>____ must always occur in pairs.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
-class='default'>In Java, it is easier to implement than GUI.</span></td></tr><tr
-valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>It is more common
-and familiar.</span></td></tr><tr valign='baseline'><td><div class='choice'>c.</div></td><td><span
-class='default'>Some programming situations require a terminal I/O interface.</span></td></tr><tr
-valign='baseline'><td><div class='choice'>d.</div></td><td><span class='default'>Terminal-oriented
-programs are similar to programs that process files of sequentially organized
-data.</span></td></tr></table></div>
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
+class='default'>Semicolons</span></td><td width='4%'><div class='choice'>c.</div></td><td
+width='46%'><span class='default'>Statements</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>Conditions</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>Braces</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -823,13 +822,15 @@ data.</span></td></tr></table></div>
 		<p class='qnumber'>&nbsp;20.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>A ____ is used to mark the end of each statement in a program.</div>
+<div class='default'>Because it returns a value of true or false, the condition in an if statement
+must be a(n) ____ expression.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
 valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>comma (,)</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>period (.)</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>slash (/)</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>semicolon (;)</span></td></tr></table></div>
+class='default'>Boolean</span></td><td width='4%'><div class='choice'>c.</div></td><td
+width='46%'><span class='default'>else</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>control</span></td><td><div
+class='choice'>d.</div></td><td><span
+class='default'>entry-controlled</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -847,14 +848,13 @@ class='choice'>d.</div></td><td><span class='default'>semicolon (;)</span></td><
 		<p class='qnumber'>&nbsp;21.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>The string of characters that appears between the parentheses following the
-message in Java code is called a(n) ____.</div>
+<div class='default'>The____ operator means not equal to.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
 valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>parameter</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>variable</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>statement</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>thread</span></td></tr></table></div>
+class='default'>--</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
+class='default'>&lt;=</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>= =</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>!=</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -872,14 +872,14 @@ class='choice'>d.</div></td><td><span class='default'>thread</span></td></tr></t
 		<p class='qnumber'>&nbsp;22.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>The three steps to writing and running a program, in order, are ____.</div>
+<div class='default'>A loop that continues until something specific is accomplished is called a(n)
+____-controlled loop.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
 valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>enter, edit, compile</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>edit, compile, execute</span></td></tr><tr
-valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>edit, execute,
-compile</span></td><td><div class='choice'>d.</div></td><td><span class='default'>enter, interpret,
-compile</span></td></tr></table></div>
+class='default'>count</span></td><td width='4%'><div class='choice'>c.</div></td><td
+width='46%'><span class='default'>task</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>entry</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>outcome</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -897,13 +897,13 @@ compile</span></td></tr></table></div>
 		<p class='qnumber'>&nbsp;23.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>____ is an editor available with Microsoft Windows.</div>
+<div class='default'>The ____ statement is used to write count-controlled loops.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
 valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>Linux</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>BlueJ</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>UNIX</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>Notepad</span></td></tr></table></div>
+class='default'>for</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
+class='default'>cntr</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>number</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>if-else</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -921,14 +921,15 @@ class='choice'>d.</div></td><td><span class='default'>Notepad</span></td></tr></
 		<p class='qnumber'>&nbsp;24.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>All of the following are examples of integrated development environments, EXCEPT
-____.</div>
+<div class='default'>In a(n) ____-controlled loop, the continuation condition is tested at the top of
+the loop on each pass.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
 valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>BlueJ</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>JFrame</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>Eclipse</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>JGrasp</span></td></tr></table></div>
+class='default'>task</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
+class='default'>count</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>entry</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>All of the
+above</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -946,14 +947,13 @@ class='choice'>d.</div></td><td><span class='default'>JGrasp</span></td></tr></t
 		<p class='qnumber'>&nbsp;25.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>The main factor affecting a program&#8217;s readability is its ____.</div>
+<div class='default'>To get out of a loop prematurely, use a(n) ____ statement.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
 valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>layout</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>language</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>spelling</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>development
-environment</span></td></tr></table></div>
+class='default'>exit</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
+class='default'>break</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>false</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>then</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -971,14 +971,13 @@ environment</span></td></tr></table></div>
 		<p class='qnumber'>&nbsp;26.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>SomeClass someObject = new SomeClass (some parameters); is an example of
-____.</div>
+<div class='default'>A(n) ____ is a special value that marks the end of a list.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
 valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>assignment</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>byte code</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>instantiation</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>interpretation</span></td></tr></table></div>
+class='default'>break</span></td><td width='4%'><div class='choice'>c.</div></td><td
+width='46%'><span class='default'>counter</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>sentinel</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>iteration</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -996,14 +995,15 @@ class='choice'>d.</div></td><td><span class='default'>interpretation</span></td>
 		<p class='qnumber'>&nbsp;27.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>____ is an assignment operator.</div>
+<div class='default'>Which of the following is true about using a text file for input?</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>+</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
-class='default'>=</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>*</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>All of the
-above.</span></td></tr></table></div>
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'>The data set can be much larger.</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>Data can be input faster and with less chance
+of error.</span></td></tr><tr valign='baseline'><td><div class='choice'>c.</div></td><td><span
+class='default'>Data can be used repeatedly with the same program or with different
+programs.</span></td></tr><tr valign='baseline'><td><div class='choice'>d.</div></td><td><span
+class='default'>All of the above are true.</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -1021,13 +1021,14 @@ above.</span></td></tr></table></div>
 		<p class='qnumber'>&nbsp;28.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>A(n) ____ has a container or pane that can be filled with other objects.</div>
+<div class='default'>In a text file, numeric data can be separated by any of the following EXCEPT
+____.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
 valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>JFrame</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>window</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>panel</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>IDE</span></td></tr></table></div>
+class='default'>return</span></td><td width='4%'><div class='choice'>c.</div></td><td
+width='46%'><span class='default'>tab</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>space</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>newline</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -1045,23 +1046,13 @@ class='choice'>d.</div></td><td><span class='default'>IDE</span></td></tr></tabl
 		<p class='qnumber'>&nbsp;29.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Colors in most computer systems use the ____ scheme.</div>
+<div class='default'>An I/O exception is in the category of ____ exceptions.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
 valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>color class</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>CMYK</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>RGB</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>GUI</span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='top'>
-	<td></td>
-	<td></td>
-	<td>
-<div class='spacer'>&nbsp;</div>
-<div class='default'>FIGURE 2-1<br><img width='242' height='116' align='bottom' alt="nar001-1.jpg"
-src="index_files/nar001-1.jpg" border='0'></div>
+class='default'>thrown</span></td><td width='4%'><div class='choice'>c.</div></td><td
+width='46%'><span class='default'>run-time</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>checked</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>overloading</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -1079,23 +1070,13 @@ src="index_files/nar001-1.jpg" border='0'></div>
 		<p class='qnumber'>&nbsp;30.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Figure 2-1 above represents a(n) ____ user interface.</div>
+<div class='default'>Data can be output to a text file using the class ____.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
 valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>GUI</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
-class='default'>terminal I/O</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>JVM</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>variable</span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='top'>
-	<td></td>
-	<td></td>
-	<td>
-<div class='spacer'>&nbsp;</div>
-<div class='default'>FIGURE 2-2<br><img width='309' height='115' align='bottom' alt="nar002-1.jpg"
-src="index_files/nar002-1.jpg" border='0'></div>
+class='default'>Scanner</span></td><td width='4%'><div class='choice'>c.</div></td><td
+width='46%'><span class='default'>PrintWriter</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>WriteData</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>TextFile</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -1113,23 +1094,14 @@ src="index_files/nar002-1.jpg" border='0'></div>
 		<p class='qnumber'>&nbsp;31.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Figure 2-2 above represents a(n) ____ user interface.</div>
+<div class='default'>A typical loop has four component parts, including all of the following EXCEPT
+___ statements.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
 valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>GUI</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
-class='default'>terminal I/O</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>JVM</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>variable</span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='top'>
-	<td></td>
-	<td></td>
-	<td>
-<div class='spacer'>&nbsp;</div>
-<div class='default'><b>Case 2-1<br></b>Jeremiah is a C++ programmer who has been asked by a client
-to create a program using Java.</div>
+class='default'>initializing</span></td><td width='4%'><div class='choice'>c.</div></td><td
+width='46%'><span class='default'>update</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>body</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>verification</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -1147,15 +1119,15 @@ to create a program using Java.</div>
 		<p class='qnumber'>&nbsp;32.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Jeremiah knows that Java is ____.</div>
+<div class='default'>A(n) ____ is a small window that asks for information, and includes a text field
+and command buttons.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
-class='default'>better suited to the Internet than C++</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>more error-prone than C++</span></td></tr><tr
-valign='baseline'><td><div class='choice'>c.</div></td><td><span class='default'>the world&#8217;s
-most popular industrial-strength programming language</span></td></tr><tr valign='baseline'><td><div
-class='choice'>d.</div></td><td><span class='default'>superficially very different from
-C++</span></td></tr></table></div>
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
+class='default'>panel</span></td><td width='4%'><div class='choice'>c.</div></td><td
+width='46%'><span class='default'>task pane</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>message dialog box</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>input dialog
+box</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -1173,25 +1145,14 @@ C++</span></td></tr></table></div>
 		<p class='qnumber'>&nbsp;33.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Jeremiah will incorporate ____ into his Java program in order to allow multiple
-processes to occur at once, such as an image being transferred from one machine to another across a
-network, while another process simultaneously interacts with the user.</div>
+<div class='default'>Use a(n) ____ statement rather than two if statements when the alternative
+courses of action are mutually exclusive.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
 valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>variables</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>panels</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>threads</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>applets</span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='top'>
-	<td></td>
-	<td></td>
-	<td>
-<div class='spacer'>&nbsp;</div>
-<div class='default'><b>Case 2-2<br></b>Lucia is editing a program using Java. She has to install a
-development environment on her computer before she can get started.</div>
+class='default'>while</span></td><td width='4%'><div class='choice'>c.</div></td><td
+width='46%'><span class='default'>if-else</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>for</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>whether</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -1209,14 +1170,24 @@ development environment on her computer before she can get started.</div>
 		<p class='qnumber'>&nbsp;34.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Lucia considers using the ____ development environment, which has the most
-widespread use.</div>
+<div class='default'>The presence or absence of the ____ symbol(s) can seriously affect the logic of
+a selection statement.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
 valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>JGrasp</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>DOS</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>Notepad</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>UNIX</span></td></tr></table></div>
+class='default'>{ }</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
+class='default'>;</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>//</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>/*&nbsp; */ </span></td></tr></table></div>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='top'>
+	<td></td>
+	<td></td>
+	<td>
+<div class='spacer'>&nbsp;</div>
+<div class='default'>FIGURE 4-2<br><img width='187' height='271' align='bottom' alt="nar002-1.jpg"
+src="index_files/nar002-1.jpg" border='0'></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -1234,14 +1205,136 @@ class='choice'>d.</div></td><td><span class='default'>UNIX</span></td></tr></tab
 		<p class='qnumber'>&nbsp;35.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Lucia decides to use the ____ development environment so that she can increase
-her productivity.</div>
+<div class='default'>Figure 4-2 above represents the behavior of a(n) ____ statement.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
 valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>JGrasp</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>DOS</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>Notepad</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>UNIX</span></td></tr></table></div>
+class='default'>if-else</span></td><td width='4%'><div class='choice'>c.</div></td><td
+width='46%'><span class='default'>random</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>while</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>infinite</span></td></tr></table></div>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='top'>
+	<td></td>
+	<td></td>
+	<td>
+<div class='spacer'>&nbsp;</div>
+<div class='default'><b>Case 4-1</b><br>Carter has written a program that has some errors that he
+needs to fix.</div>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+		<select name='MC:36' align='top' onmousewheel='return(false);'>
+			<option value=' '> 
+			<option value='A'>A
+			<option value='B'>B
+			<option value='C'>C
+			<option value='D'>D
+		</select>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;36.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>Carter realizes that the loop in his program goes around once more than
+necessary, meaning that he has a(n) ____ error.</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
+class='default'>termination</span></td><td width='4%'><div class='choice'>c.</div></td><td
+width='46%'><span class='default'>off-by-one</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>count-controlled</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>infinite loop</span></td></tr></table></div>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+		<select name='MC:37' align='top' onmousewheel='return(false);'>
+			<option value=' '> 
+			<option value='A'>A
+			<option value='B'>B
+			<option value='C'>C
+			<option value='D'>D
+		</select>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;37.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>Carter thinks his program is stuck in an infinite loop. What should he do to his
+PC to make it stop?</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
+class='default'>Unplug the computer.</span></td><td width='4%'><div class='choice'>c.</div></td><td
+width='46%'><span class='default'>Press Ctrl+Alt+Delete.</span></td></tr><tr
+valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>Press
+Ctrl+C.</span></td><td><div class='choice'>d.</div></td><td><span class='default'>Restart the
+computer.</span></td></tr></table></div>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='top'>
+	<td></td>
+	<td></td>
+	<td>
+<div class='spacer'>&nbsp;</div>
+<div class='default'><b>Case 4-2</b><br>Gabrielle is writing a program that finds the average of a
+list of positive numbers.</div>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+		<select name='MC:38' align='top' onmousewheel='return(false);'>
+			<option value=' '> 
+			<option value='A'>A
+			<option value='B'>B
+			<option value='C'>C
+			<option value='D'>D
+		</select>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;38.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>Gabrielle uses ____ as the sentinel.</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
+class='default'>0</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
+class='default'>1</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>-1</span></td><td><div
+class='choice'>d.</div></td><td><span class='default'>1.0</span></td></tr></table></div>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+		<select name='MC:39' align='top' onmousewheel='return(false);'>
+			<option value=' '> 
+			<option value='A'>A
+			<option value='B'>B
+			<option value='C'>C
+			<option value='D'>D
+		</select>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;39.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>Gabrielle is using a text file to input the list of numbers. Which of the
+following is NOT true?</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'>If the file is missing, the JVM will thrown an I/O exception.</span></td></tr><tr
+valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>The numbers must be
+separated by whitespace characters.</span></td></tr><tr valign='baseline'><td><div
+class='choice'>c.</div></td><td><span class='default'>Gabrielle uses the PrintWriter class to read
+the data in the text file.</span></td></tr><tr valign='baseline'><td><div
+class='choice'>d.</div></td><td><span class='default'>The text file must contain a special character
+that marks the end of the file.</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -1256,73 +1349,72 @@ statement.</i></div>
 	<td>
 	</td>
 	<td>
-		<p class='qnumber'>&nbsp;36.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>____________________ is the fastest growing programming language in the
-world.</div><div style='font-size:2pt'></div>
-<div style='font-size:4pt'>&nbsp;</div>
-		<input type='text' name='CO:36' size='60' maxlength='60'><br>
-
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;37.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>A comical animated character on a Web page is likely run using a program called
-a(n) ____________________.</div><div style='font-size:2pt'></div>
-<div style='font-size:4pt'>&nbsp;</div>
-		<input type='text' name='CO:37' size='60' maxlength='60'><br>
-
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;38.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>A(n) ____________________ is a programmer who breaks into computer systems in an
-unauthorized way.</div><div style='font-size:2pt'></div>
-<div style='font-size:4pt'>&nbsp;</div>
-		<input type='text' name='CO:38' size='60' maxlength='60'><br>
-
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;39.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>In the ____________________ layout, the default layout manager for frames, you
-can arrange up to five objects.</div><div style='font-size:2pt'></div>
-<div style='font-size:4pt'>&nbsp;</div>
-		<input type='text' name='CO:39' size='60' maxlength='60'><br>
-
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-	</td>
-	<td>
 		<p class='qnumber'>&nbsp;40.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>In the ____________________ layout, objects are arranged in rows and
-columns.</div><div style='font-size:2pt'></div>
+<div class='default'>The ____________________ operator decreases a variable&#8217;s value by
+one.</div><div style='font-size:2pt'></div>
 <div style='font-size:4pt'>&nbsp;</div>
 		<input type='text' name='CO:40' size='60' maxlength='60'><br>
+
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;41.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>The ____________________ operator increases a variable&#8217;s value by
+one.</div><div style='font-size:2pt'></div>
+<div style='font-size:4pt'>&nbsp;</div>
+		<input type='text' name='CO:41' size='60' maxlength='60'><br>
+
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;42.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>Each pass through a loop is called a(n) ____________________.</div><div style='font-size:2pt'></div>
+<div style='font-size:4pt'>&nbsp;</div>
+		<input type='text' name='CO:42' size='60' maxlength='60'><br>
+
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;43.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>A(n)&nbsp; ____________________ control statement is located inside another
+control statement.</div><div style='font-size:2pt'></div>
+<div style='font-size:4pt'>&nbsp;</div>
+		<input type='text' name='CO:43' size='60' maxlength='60'><br>
+
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;44.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>____________________ statements execute within each pass and implement the
+calculation in question.</div><div style='font-size:2pt'></div>
+<div style='font-size:4pt'>&nbsp;</div>
+		<input type='text' name='CO:44' size='60' maxlength='60'><br>
 
 <div class='spacer'>&nbsp;</div>
 	</td>
@@ -1341,89 +1433,13 @@ columns.</div><div style='font-size:2pt'></div>
 <div class='default'><i>Identify the letter of the choice that best matches the phrase or
 definition.<br></i></div><div class='default'><table cellpadding='0' cellspacing='0' width='95%'
 border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td
-width='96%'><span class='default'>Applet</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>GUI</span></td></tr><tr
+width='96%'><span class='default'>Random</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>Update</span></td></tr><tr
 valign='baseline'><td><div class='choice'>c.</div></td><td><span
-class='default'>IDE</span></td></tr><tr valign='baseline'><td><div
-class='choice'>d.</div></td><td><span class='default'>Pane</span></td></tr><tr
-valign='baseline'><td><div class='choice'>e.</div></td><td><span class='default'>Byte
-code</span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MA:41' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-			<option value='E'>E
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;41.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<span class='default'>An example could be a continuous stream of stock quotes.</span>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MA:42' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-			<option value='E'>E
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;42.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<span class='default'>Windows are often organized into many of these.</span>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MA:43' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-			<option value='E'>E
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;43.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<span class='default'>To run this, you must install a JVM on the computer.</span>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MA:44' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-			<option value='E'>E
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;44.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<span class='default'>Eclipse is an example.</span>
+class='default'>Abs</span></td></tr><tr valign='baseline'><td><div
+class='choice'>d.</div></td><td><span class='default'>Exception</span></td></tr><tr
+valign='baseline'><td><div class='choice'>e.</div></td><td><span
+class='default'>Break</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -1442,7 +1458,140 @@ code</span></td></tr></table></div>
 		<p class='qnumber'>&nbsp;45.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<span class='default'>Familiar interface for PC users.</span>
+<span class='default'>A method in the Math class.</span>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+		<select name='MA:46' align='top' onmousewheel='return(false);'>
+			<option value=' '> 
+			<option value='A'>A
+			<option value='B'>B
+			<option value='C'>C
+			<option value='D'>D
+			<option value='E'>E
+		</select>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;46.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<span class='default'>What happens when a program encounters an operation that it cannot perform at
+runtime.</span>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+		<select name='MA:47' align='top' onmousewheel='return(false);'>
+			<option value=' '> 
+			<option value='A'>A
+			<option value='B'>B
+			<option value='C'>C
+			<option value='D'>D
+			<option value='E'>E
+		</select>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;47.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<span class='default'>A class used to simulate stock market fluctuations.</span>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+		<select name='MA:48' align='top' onmousewheel='return(false);'>
+			<option value=' '> 
+			<option value='A'>A
+			<option value='B'>B
+			<option value='C'>C
+			<option value='D'>D
+			<option value='E'>E
+		</select>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;48.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<span class='default'>Exits a loop before the condition is false.</span>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+		<select name='MA:49' align='top' onmousewheel='return(false);'>
+			<option value=' '> 
+			<option value='A'>A
+			<option value='B'>B
+			<option value='C'>C
+			<option value='D'>D
+			<option value='E'>E
+		</select>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;49.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<span class='default'>A statement that changes the values of the variables tested in the termination
+condition.</span>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='top'>
+	<td colspan='3'><br>
+<div class='default'><b>Code</b></div>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;50.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>Write a program that prompts the user to enter a number within the range of 1
+through 10.<br>The program should display the Roman numeral version of that number. If the number
+is<br>outside the range of 1 through 10, the program should display an error message.</div><div style='font-size:2pt'></div>
+		<textarea name='ES:50' rows='5' cols='60' wrap='virtual'></textarea>
+
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;51.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>The area of a rectangle is the rectangle&#8217;s length times its width. Write a
+program that asks<br>for the length and width of two rectangles. The program should tell the user
+which rectangle<br>has the greater area, or if the areas are the same.</div><div style='font-size:2pt'></div>
+		<textarea name='ES:51' rows='5' cols='60' wrap='virtual'></textarea>
+
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;52.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>Scientists measure an object&#8217;s mass in kilograms and its weight in
+newtons. If you know the<br>amount of mass of an object in kilograms, you can calculate its weight in
+newtons with the<br>following formula:<br><br><i>weight = mass x 9.8</i><br><br>Write a program that
+asks the user to enter an object&#8217;s mass, and then calculates its weight and print the weight of
+the object.<br><br>If the object weighs more than 1,000 newtons, display a message indicating that it
+is too heavy. If the object weighs less than 10 newtons, display a message indicating that it is too
+light.</div><div style='font-size:2pt'></div>
+		<textarea name='ES:52' rows='5' cols='60' wrap='virtual'></textarea>
+
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>

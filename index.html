@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Senior Scavenger Hunt</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f5ff;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            padding-top: 120px; /* Increased padding to accommodate fixed header */
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            margin-top: 3rem;
+        }
+        
+        .header-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 10px 0;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-content h2 {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        
+        .header-content p {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .question {
+            margin-bottom: 30px;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            background-color: #f8f9fa;
+        }
+        
+        .question h3 {
+            margin-top: 0;
+            color: #3498db;
+            text-align: left;
+        }
+        
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 20px auto;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        #result {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        #resultContent {
+            margin-top: 20px;
+        }
+        
+        .college-logo {
+            max-width: 250px;
+            max-height: 150px;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: fall linear forwards;
+        }
+        
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        
+        .progress-bar {
+            width: 0%;
+            height: 20px;
+            background-color: #4CAF50;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            transition: width 0.5s;
+        }
+        
+        .timer {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0;
+            color: #e74c3c;
+        }
+        
+        .input-feedback {
+            padding: 5px;
+            margin-top: 5px;
+            border-radius: 4px;
+        }
+        
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <div class="header-content">
+            <h2>AP Computer Science Senior Scavenger Hunt</h2>
+            <p>Welcome to your final CS challenge! You have <span id="timeLeft">20:00</span> minutes remaining.</p>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar">0%</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container" id="inputContainer">
+        <div id="questionContainer">
+            <!-- Questions will be inserted here by JavaScript -->
+        </div>
+        
+        <button id="submitBtn">Submit Answers</button>
+    </div>
+    
+    <div class="container" id="result">
+        <div id="resultContent"></div>
+        <button id="backBtn" style="margin-top: 20px; display: none;">Back to Scavenger Hunt</button>
+    </div>
+    
+    <script>
+        // Student data with college information
+        const students = [
+            { name: "Emma", college: "George Washington University", image: "images/gw.jpg" },
+            { name: "Lorena", college: "American University", image: "images/american.png" },
+            { name: "Yadieliz", college: "Universidad de Puerto Rico Mayaguez", image: "images/mayaguez.png" },
+            { name: "Veronica", college: "University of Miami", image: "images/miami.png" },
+            { name: "Ariana", college: "University of Pennsylvania", image: "images/upenn.png" },
+            { name: "Stephanie", college: "Between Babson and Fairfield", image: "images/babson.png" },
+            { name: "Daniela", college: "Universidad Politécnica de Puerto Rico", image: "images/poli.jpg" },
+            { name: "Emilia", college: "Universidad de Puerto Rico Rio Piedras", image: "images/upr.png" },
+            { name: "Michelle", college: "University of Miami", image: "images/miami.png" },
+            { name: "Cecilia", college: "Notre Dame", image: "images/notre.png" },
+            { name: "Mia", college: "George Washington University", image: "images/gw.jpg" }
+        ];
+
+        // Questions for the scavenger hunt
+        const questions = [
+            {
+                id: 1,
+                text: "Which app is known for short-form videos that typically last up to 60 seconds?",
+                type: "select",
+                options: ["Instagram", "TikTok", "Snapchat", "YouTube"],
+                answer: "TikTok",
+                hint: "It became especially popular during the pandemic"
+            },
+            {
+                id: 2,
+                text: "Which artist broke the record for most streams in a single day on Spotify in 2023?",
+                type: "select",
+                options: ["Taylor Swift", "Olivia Rodrigo", "Bad Bunny", "Drake"],
+                answer: "Taylor Swift",
+                hint: "She released her 10th studio album 'Midnights' in 2022"
+            },
+            {
+                id: 3,
+                text: "Which social media platform is known for its BeReal feature that prompts users to share unfiltered photos at random times?",
+                type: "select",
+                options: ["Instagram", "BeReal", "Snapchat", "VSCO"],
+                answer: "BeReal",
+                hint: "It encourages authenticity with a daily 2-minute window to post"
+            },
+            {
+                id: 4,
+                text: "What streaming service produced 'Stranger Things'?",
+                type: "select",
+                options: ["Disney+", "Netflix", "Hulu", "HBO Max"],
+                answer: "Netflix",
+                hint: "It's the streaming service with the red logo"
+            },
+            {
+                id: 5,
+                text: "Which meme features a dog sitting in a burning room saying 'This is fine'?",
+                type: "select",
+                options: ["Distracted Boyfriend", "This Is Fine", "Surprised Pikachu", "Woman Yelling at Cat"],
+                answer: "This Is Fine",
+                hint: "It's often used to describe trying to stay calm during chaotic situations"
+            },
+            {
+                id: 6,
+                text: "What was the first social media platform to reach 1 billion monthly active users?",
+                type: "select",
+                options: ["Twitter", "Instagram", "Facebook", "TikTok"],
+                answer: "Facebook",
+                hint: "Founded by Mark Zuckerberg"
+            },
+            {
+                id: 7,
+                text: "Which of these is NOT a song by Billie Eilish?",
+                type: "select",
+                options: ["Bad Guy", "Ocean Eyes", "Drivers License", "Therefore I Am"],
+                answer: "Drivers License",
+                hint: "This song was a hit by another young female artist"
+            },
+            {
+                id: 8,
+                text: "Which TV show features characters competing in deadly children's games for a cash prize?",
+                type: "select",
+                options: ["Money Heist", "Squid Game", "Bridgerton", "Euphoria"],
+                answer: "Squid Game",
+                hint: "It's a Korean drama that became Netflix's most-watched show"
+            },
+            {
+                id: 9,
+                text: "What does 'SMH' stand for in internet slang?",
+                type: "select",
+                options: ["So Much Hate", "Shaking My Head", "Send Me Help", "So Much Hype"],
+                answer: "Shaking My Head",
+                hint: "It's used to express disappointment or disbelief"
+            },
+            {
+                id: 10,
+                text: "What food trend went viral where people made whipped coffee at home during the pandemic?",
+                type: "select",
+                options: ["Dalgona Coffee", "Avocado Toast", "Cloud Bread", "Pasta Chips"],
+                answer: "Dalgona Coffee",
+                hint: "It originated in South Korea and requires whipping instant coffee"
+            },
+            {
+                id: 11,
+                text: "Which female artist's album 'Renaissance' won Grammy's Album of the Year in 2023?",
+                type: "select",
+                options: ["Beyoncé", "Adele", "SZA", "Taylor Swift"],
+                answer: "Beyoncé",
+                hint: "She's known as Queen B"
+            },
+            {
+                id: 12,
+                text: "Which viral dance challenge was associated with Lizzo's song 'About Damn Time'?",
+                type: "select",
+                options: ["Renegade", "Savage", "Fancy Like", "About Damn Time"],
+                answer: "About Damn Time",
+                hint: "It featured synchronized arm movements and was popular on TikTok"
+            },
+            {
+                id: 13,
+                text: "Which makeup brand was founded by Rihanna?",
+                type: "select",
+                options: ["Rare Beauty", "Fenty Beauty", "Kylie Cosmetics", "Haus Labs"],
+                answer: "Fenty Beauty",
+                hint: "It's known for its inclusive shade range"
+            },
+            {
+                id: 14,
+                text: "What is the name of the main character in 'Wednesday' who attends Nevermore Academy?",
+                type: "select",
+                options: ["Enid Sinclair", "Bianca Barclay", "Wednesday Addams", "Morticia Addams"],
+                answer: "Wednesday Addams",
+                hint: "She's from the Addams Family"
+            },
+            {
+                id: 15,
+                text: "Which fashion trend returned from the 2000s featuring low-waisted pants?",
+                type: "select",
+                options: ["Y2K Fashion", "Cottage Core", "Dark Academia", "Coastal Grandmother"],
+                answer: "Y2K Fashion",
+                hint: "Named after the year 2000"
+            },
+            {
+                id: 16,
+                text: "Which HBO series follows teenagers navigating identity, love, and addiction, starring Zendaya?",
+                type: "select",
+                options: ["Euphoria", "The White Lotus", "Industry", "Generation"],
+                answer: "Euphoria",
+                hint: "Zendaya won an Emmy for her role as Rue"
+            },
+            {
+                id: 17,
+                text: "What app allows users to track and share what movies and TV shows they've watched?",
+                type: "select",
+                options: ["IMDb", "Letterboxd", "Rotten Tomatoes", "Netflix"],
+                answer: "Letterboxd",
+                hint: "It's especially popular among film enthusiasts"
+            },
+            {
+                id: 18,
+                text: "Which song by Olivia Rodrigo includes the lyrics about a driver's license?",
+                type: "select",
+                options: ["good 4 u", "deja vu", "drivers license", "traitor"],
+                answer: "drivers license",
+                hint: "It was her breakthrough hit"
+            },
+            {
+                id: 19,
+                text: "What is the name of the TikTok-famous female robot who creates art and has conversations?",
+                type: "select",
+                options: ["Megan", "Sophia", "Loona", "Alexa"],
+                answer: "Sophia",
+                hint: "She became the first robot to receive citizenship of a country"
+            },
+            {
+                id: 20,
+                text: "Which female athlete broke the record for most Olympic gold medals in gymnastics?",
+                type: "select",
+                options: ["Simone Biles", "Gabby Douglas", "Suni Lee", "Nastia Liukin"],
+                answer: "Simone Biles",
+                hint: "She's known for her signature move called 'The Biles'"
+            }
+        ];
+
+        let timer;
+        let timeLeft = 20 * 60; // 20 minutes in seconds
+        let studentName = "";
+        
+        // Initialize the scavenger hunt
+        function init() {
+            // Display questions
+            const questionContainer = document.getElementById('questionContainer');
+            
+            // Add student name input as the first question
+            const nameContainer = document.createElement('div');
+            nameContainer.className = 'question';
+            nameContainer.innerHTML = `
+                <h3>Enter Your Name</h3>
+                <p>Please type your full name as it appears in the class roster:</p>
+                <input type="text" id="studentName" placeholder="Your name">
+                <div id="feedback-studentName" class="input-feedback"></div>
+            `;
+            questionContainer.appendChild(nameContainer);
+            
+            // Add the remaining questions
+            questions.forEach(question => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question hidden';
+                questionDiv.id = `question-${question.id}`;
+                
+                let inputHTML = `
+                    <select id="answer-${question.id}">
+                        <option value="">-- Select your answer --</option>
+                        ${question.options.map(option => `<option value="${option}">${option}</option>`).join('')}
+                    </select>
+                `;
+                
+                questionDiv.innerHTML = `
+                    <h3>Question ${question.id}</h3>
+                    <p>${question.text}</p>
+                    ${inputHTML}
+                    <div id="feedback-${question.id}" class="input-feedback"></div>
+                    <button class="hint-btn" onclick="showHint(${question.id})">Hint</button>
+                    <p id="hint-${question.id}" style="display: none; color: #7f8c8d; font-style: italic;">${question.hint}</p>
+                `;
+                
+                questionContainer.appendChild(questionDiv);
+            });
+            
+            // Add event listener to student name input
+            document.getElementById('studentName').addEventListener('input', function() {
+                studentName = this.value.trim();
+                const student = students.find(s => s.name.toLowerCase() === studentName.toLowerCase());
+                
+                if (student) {
+                    document.getElementById('feedback-studentName').textContent = "Name recognized! Welcome " + student.name;
+                    document.getElementById('feedback-studentName').className = "input-feedback correct";
+                    
+                    // Show the first question
+                    document.getElementById('question-1').classList.remove('hidden');
+                    updateProgress();
+                } else if (studentName) {
+                    document.getElementById('feedback-studentName').textContent = "Hmm, your name isn't on my list. Try again!";
+                    document.getElementById('feedback-studentName').className = "input-feedback incorrect";
+                } else {
+                    document.getElementById('feedback-studentName').textContent = "";
+                    document.getElementById('feedback-studentName').className = "input-feedback";
+                }
+            });
+            
+            // Add event listeners to question inputs
+            questions.forEach((question, index) => {
+                const answerInput = document.getElementById(`answer-${question.id}`);
+                answerInput.addEventListener('change', function() {
+                    const userAnswer = this.value.trim();
+                    const feedbackElement = document.getElementById(`feedback-${question.id}`);
+                    
+                    if (userAnswer === question.answer) {
+                        feedbackElement.textContent = "Correct!";
+                        feedbackElement.className = "input-feedback correct";
+                        
+                        // Show the next question if it exists
+                        if (index < questions.length - 1) {
+                            document.getElementById(`question-${questions[index+1].id}`).classList.remove('hidden');
+                        }
+                        
+                        updateProgress();
+                    } else if (userAnswer) {
+                        feedbackElement.textContent = "Not quite right, try again!";
+                        feedbackElement.className = "input-feedback incorrect";
+                    } else {
+                        feedbackElement.textContent = "";
+                        feedbackElement.className = "input-feedback";
+                    }
+                });
+            });
+            
+            // Add event listener to submit button
+            document.getElementById('submitBtn').addEventListener('click', evaluateAnswers);
+            
+            // Start the timer
+            startTimer();
+        }
+        
+        // Function to show hints
+        function showHint(questionId) {
+            const hintElement = document.getElementById(`hint-${questionId}`);
+            if (hintElement.style.display === 'none') {
+                hintElement.style.display = 'block';
+            } else {
+                hintElement.style.display = 'none';
+            }
+        }
+        
+        // Function to update progress bar
+        function updateProgress() {
+            const totalQuestions = questions.length + 1; // +1 for the name input
+            let answeredCorrectly = 0;
+            
+            // Check if name is correct
+            const student = students.find(s => s.name.toLowerCase() === studentName.toLowerCase());
+            if (student) {
+                answeredCorrectly++;
+            }
+            
+            // Check each question - all are select type now
+            questions.forEach(question => {
+                const answerInput = document.getElementById(`answer-${question.id}`);
+                const userAnswer = answerInput.value.trim();
+                
+                if (userAnswer === question.answer) {
+                    answeredCorrectly++;
+                }
+            });
+            
+            const progress = Math.round((answeredCorrectly / totalQuestions) * 100);
+            document.getElementById('progressBar').style.width = `${progress}%`;
+            document.getElementById('progressBar').textContent = `${progress}%`;
+        }
+        
+        // Function to start the timer
+        function startTimer() {
+            const timerElement = document.getElementById('timeLeft');
+            
+            timer = setInterval(function() {
+                timeLeft--;
+                
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                
+                timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    evaluateAnswers();
+                }
+            }, 1000);
+        }
+        
+        // Function to evaluate answers and show result
+        function evaluateAnswers() {
+            if (timer) {
+                clearInterval(timer);
+            }
+            
+            const student = students.find(s => s.name.toLowerCase() === studentName.toLowerCase());
+            
+            if (!student) {
+                alert("Please enter your name correctly to continue.");
+                return;
+            }
+            
+            document.getElementById('inputContainer').style.display = 'none';
+            document.getElementById('result').style.display = 'block';
+            
+            // Show the student's college info
+            const resultContent = document.getElementById('resultContent');
+            
+            // Special case for Stephanie who is deciding between two colleges
+            if (student.name === "Stephanie") {
+                resultContent.innerHTML = `
+                    <h2>Congratulations ${student.name}!</h2>
+                    <p>We'll miss you next year as you head off to choose between Babson and Fairfield!</p>
+                    <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                        <div style="margin: 10px;">
+                            <img class="college-logo" src="images/babson.png" alt="Babson College logo">
+                            <p>Babson College</p>
+                        </div>
+                        <div style="margin: 10px;">
+                            <img class="college-logo" src="images/fairfield.png" alt="Fairfield University logo">
+                            <p>Fairfield University</p>
+                        </div>
+                    </div>
+                    <p>Remember everything you've learned in AP Computer Science - I know you'll do great things!</p>
+                    <p><strong>GO KICK SOME ASS :)</strong></p>
+                `;
+            } else {
+                resultContent.innerHTML = `
+                    <h2>Congratulations ${student.name}!</h2>
+                    <p>We'll miss you next year as you head off to ${student.college}!</p>
+                    <img class="college-logo" src="${student.image}" alt="${student.college} logo">
+                    <p>Remember everything you've learned in AP Computer Science - I know you'll do great things!</p>
+                    <p><strong>GO KICK SOME ASS :)</strong></p>
+                `;
+            }
+            
+            // Create confetti celebration effect
+            createConfetti();
+        }
+        
+        // Function to create confetti celebration effect
+        function createConfetti() {
+            const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', '#FF5722'];
+            
+            for (let i = 0; i < 150; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.top = -10 + 'px';
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                document.body.appendChild(confetti);
+                
+                // Remove confetti after animation
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+        }
+        
+        // Global function to show hints
+        window.showHint = function(questionId) {
+            const hintElement = document.getElementById(`hint-${questionId}`);
+            if (hintElement.style.display === 'none') {
+                hintElement.style.display = 'block';
+            } else {
+                hintElement.style.display = 'none';
+            }
+        };
+        
+        // Initialize when page loads
+        window.onload = init;
+    </script>
+</body>
+</html>

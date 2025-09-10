@@ -3,7 +3,7 @@
 <head>
 	<meta name='generator' content='ExamView HTML Generator 1.0.5'>
 	<meta name='robots' content='noindex,nofollow'>
-	<title>Chapter 4: Introduction to Control Statements</title>
+	<title>Chapter 1: Introduction to Computers and Programming</title>
 	<style type='text/css'>
 		.spacer { line-height:.7em; }
 		.title { font-size:13pt; font-weight:bold; font-family:"Times New Roman", "Times", serif; color:#000000; }
@@ -15,118 +15,93 @@
 		TD.pad { padding: 0pt 4pt 0pt 4pt; }
 		.font1 { font-family:"Times New Roman", "Times", serif; }
 		.font2 { font-family:"Times New Roman", "Times", serif; }
+		.font3 { font-family:"Courier New", "Courier", monospace; }
 	</style>
 <script type='text/javascript' language='JavaScript1.1'>
 <!--
 	// Copyright (c) 2000-2008 eInstruction Corp.
-	var listMap = '1111111111000001111111111111111111111110000011111000';
-	var qtypeMap = '0000000000111112222222222222222222222227777788888BBB';
-	var ansMap = new Array(52);
-	var ptsMap = new Array(52);
+	var listMap = '111111111111111111111111111100000000000';
+	var qtypeMap = '000000000022222222222222222237777777777';
+	var ansMap = new Array(39);
+	var ptsMap = new Array(39);
 	ansMap[0] = '55';
 	ptsMap[0] = 1;
-	ansMap[1] = '56';
+	ansMap[1] = '44';
 	ptsMap[1] = 1;
 	ansMap[2] = '45';
 	ptsMap[2] = 1;
-	ansMap[3] = '42';
+	ansMap[3] = '50';
 	ptsMap[3] = 1;
 	ansMap[4] = '51';
 	ptsMap[4] = 1;
-	ansMap[5] = '52';
+	ansMap[5] = '40';
 	ptsMap[5] = 1;
 	ansMap[6] = '53';
 	ptsMap[6] = 1;
-	ansMap[7] = '4e';
+	ansMap[7] = '5c';
 	ptsMap[7] = 1;
-	ansMap[8] = '5d';
+	ansMap[8] = '4f';
 	ptsMap[8] = 1;
-	ansMap[9] = '4c';
+	ansMap[9] = '5e';
 	ptsMap[9] = 1;
-	ansMap[10] = '4d276864657f796467';
+	ansMap[10] = '49';
 	ptsMap[10] = 1;
-	ansMap[11] = '4a206f63796278';
+	ansMap[11] = '4f';
 	ptsMap[11] = 1;
-	ansMap[12] = '59';
+	ansMap[12] = '4c';
 	ptsMap[12] = 1;
-	ansMap[13] = '48226760686760677a6b';
+	ansMap[13] = '4d';
 	ptsMap[13] = 1;
-	ansMap[14] = '5b';
+	ansMap[14] = '4d';
 	ptsMap[14] = 1;
 	ansMap[15] = '51';
 	ptsMap[15] = 1;
-	ansMap[16] = '53';
+	ansMap[16] = '52';
 	ptsMap[16] = 1;
-	ansMap[17] = '51';
+	ansMap[17] = '50';
 	ptsMap[17] = 1;
-	ansMap[18] = '57';
+	ansMap[18] = '50';
 	ptsMap[18] = 1;
-	ansMap[19] = '55';
+	ansMap[19] = '50';
 	ptsMap[19] = 1;
-	ansMap[20] = '51';
+	ansMap[20] = '57';
 	ptsMap[20] = 1;
-	ansMap[21] = '55';
+	ansMap[21] = '52';
 	ptsMap[21] = 1;
 	ansMap[22] = '56';
 	ptsMap[22] = 1;
 	ansMap[23] = '5a';
 	ptsMap[23] = 1;
-	ansMap[24] = '5a';
+	ansMap[24] = '5b';
 	ptsMap[24] = 1;
-	ansMap[25] = '58';
+	ansMap[25] = '59';
 	ptsMap[25] = 1;
-	ansMap[26] = '5f';
+	ansMap[26] = '5a';
 	ptsMap[26] = 1;
-	ansMap[27] = '5d';
+	ansMap[27] = '5f';
 	ptsMap[27] = 1;
-	ansMap[28] = '5f';
-	ptsMap[28] = 1;
-	ansMap[29] = '5d';
+	ansMap[28] = '5c315e';
+	ptsMap[28] = 2;
+	ansMap[29] = '6e6c71796c7f73';
 	ptsMap[29] = 1;
-	ansMap[30] = '5b';
+	ansMap[30] = '777e6d7b687e6d7a';
 	ptsMap[30] = 1;
-	ansMap[31] = '45';
+	ansMap[31] = '62646f7573606d2171736e62647272686f6621746f68752d21425154';
 	ptsMap[31] = 1;
-	ansMap[32] = '41';
+	ansMap[32] = '6f63656c67766b61636e6e7b';
 	ptsMap[32] = 1;
-	ansMap[33] = '42';
+	ansMap[33] = '4e6a60716c73716c606670706c7170';
 	ptsMap[33] = 1;
-	ansMap[34] = '46';
+	ansMap[34] = '5761676b6a6065767d2477706b76656361';
 	ptsMap[34] = 1;
-	ansMap[35] = '46';
+	ansMap[35] = '77646b616a6828646666607676256860686a777c2925574448';
 	ptsMap[35] = 1;
-	ansMap[36] = '44';
+	ansMap[36] = '606a67756e';
 	ptsMap[36] = 1;
-	ansMap[37] = '45';
+	ansMap[37] = '6e69736275777562736275';
 	ptsMap[37] = 1;
-	ansMap[38] = '4b';
+	ansMap[38] = '7b6b7a61787c';
 	ptsMap[38] = 1;
-	ansMap[39] = '6d6c6a7b6c646c677d';
-	ptsMap[39] = 1;
-	ansMap[40] = '636469786f676f647e';
-	ptsMap[40] = 1;
-	ansMap[41] = '627f6e796a7f626465';
-	ptsMap[41] = 1;
-	ansMap[42] = '62697f786968';
-	ptsMap[42] = 1;
-	ansMap[43] = '4f626974';
-	ptsMap[43] = 1;
-	ansMap[44] = '4d';
-	ptsMap[44] = 1;
-	ansMap[45] = '4b';
-	ptsMap[45] = 1;
-	ansMap[46] = '51';
-	ptsMap[46] = 1;
-	ansMap[47] = '54';
-	ptsMap[47] = 1;
-	ansMap[48] = '50';
-	ptsMap[48] = 1;
-	ansMap[49] = '';
-	ptsMap[49] = 1;
-	ansMap[50] = '';
-	ptsMap[50] = 1;
-	ansMap[51] = '';
-	ptsMap[51] = 1;
 	function HandleSubmit(f)
 	{
 		var	MAGIC = 840;
@@ -286,6 +261,31 @@
 
 	function MultiResponseCompare(responseText, answerText, pointsPossible)
 	{
+		var	respList = responseText.split(",");
+		var	ansList = answerText.split(",");
+		var	numPoints = 0;
+		var	numCorrect = 0;
+		var	numPossible = ansList.length;
+		var	i, j;
+
+		for (i=0; i < numPossible; ++i) {
+			for (j=0; j < respList.length; ++j) {
+				if (respList[j] == ansList[i]) {
+					++numCorrect;
+					respList[j] = null;
+					break;
+				}
+			}
+		}
+
+		for (i=0; i < respList.length; ++i) {
+			if (respList[i] != null)
+				--numCorrect;
+		}
+
+		if (numCorrect > 0 && numPossible > 0)
+			numPoints = Math.round(pointsPossible * numCorrect / numPossible);
+		return(numPoints);
 	}
 
 	function NumericCompare(response, answer, exactMatch)
@@ -320,35 +320,30 @@
 
 	function FixMTF(f)
 	{
-		var	text;
-		var	letter;
-		var	theList;
-		var	listIndex;
-		var	number;
-		var	i;
-
-		for (i=0; i < f.length; ++i) {
-			if (f.elements[i].name.indexOf("MTF:") == 0) {
-				number = parseInt(f.elements[i].name.substring(4), 10);
-
-				theList = f["MTF-" + number + "-1"];
-				if (theList) {
-					listIndex = theList.selectedIndex;
-					letter = theList.options[listIndex].value;
-				} else
-					letter = "";
-
-				text = StripSpaces(f["MTF-" + number + "-2"].value);
-				if (text == "")
-					f.elements[i].value = letter;
-				else
-					f.elements[i].value = letter + "," + text;
-			}
-		}
 	}
 
 	function FixMR(f)
 	{
+		var	number;
+		var	choices;
+		var	selected;
+		var	i, j;
+
+		for (i=0; i < f.length; ++i) {
+			if (f.elements[i].name.indexOf("MR:") == 0) {
+				number = parseInt(f.elements[i].name.substring(3), 10);
+
+				selected = new Array();
+				choices = document.getElementsByName("MR-" + number);
+				for (j=0; j < choices.length; ++j) {
+					if (choices[j].checked)
+						selected[selected.length] = choices[j].value;
+				}
+				
+				selected.sort();
+				f.elements[i].value = selected.join(",");
+			}
+		}
 	}
 
 	function AllowReset()
@@ -392,13 +387,13 @@ if (navigator.appName.indexOf("Netscape") >= 0) {
 <input type='hidden' name='instructor_org' value='CPN'>
 <input type='hidden' name='instructor_city' value='Guaynabo'>
 <input type='hidden' name='instructor_state' value='PR'>
-<input type='hidden' name='test_name' value='Chapter 4: Introduction to Control Statements'>
+<input type='hidden' name='test_name' value='Chapter 1: Introduction to Computers and Programming'>
 <input type='hidden' name='other_label' value='Other'>
 <input type='hidden' name='test_mixed_questions' value='0'>
 <input type='hidden' name='score_correct' value='0'>
 <input type='hidden' name='score_possible' value='0'>
 <input type='hidden' name='score_percent' value='0'>
-<input type='hidden' name='score_subjective' value='3'>
+<input type='hidden' name='score_subjective' value='0'>
 <input type='hidden' name='score_details' value=''>
 <div class='spacer'>&nbsp;</div>
 <div class='default'>
@@ -409,7 +404,7 @@ if (navigator.appName.indexOf("Netscape") >= 0) {
 	<b>Email:</b>&nbsp;<input type='text' name='student_email' size='45'><br><br>
 	</div>
 </div>
-<div class='title'>Chapter 4: Introduction to Control Statements</div>
+<div class='title'>Chapter 1: Introduction to Computers and Programming</div>
 
 <table align='left' width='100%' border='0' cellpadding='0' cellspacing='0'>
 <tr valign='top'>
@@ -431,7 +426,8 @@ statement is true or false.</i></div>
 		<p class='qnumber'>&nbsp;1.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>m++ and m = m + 1 are the same thing.</div>
+<div class='default'>A software developer is the person with the training to design, create, and test
+computer programs.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -447,8 +443,8 @@ statement is true or false.</i></div>
 		<p class='qnumber'>&nbsp;2.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>A program used to simulate coin toss results uses a random number
-generator.</div>
+<div class='default'>A computer is a single device that performs different types of tasks for its
+users.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -464,8 +460,8 @@ generator.</div>
 		<p class='qnumber'>&nbsp;3.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Use an if statement to instruct a program to execute one statement if the
-condition is true, and another if the condition is false.</div>
+<div class='default'>All programs are normally stored in ROM and are loaded into RAM as needed for
+processing.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -481,7 +477,8 @@ condition is true, and another if the condition is false.</div>
 		<p class='qnumber'>&nbsp;4.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>It is better to underuse braces or parentheses than to overuse them.</div>
+<div class='default'>The instruction set for a microprocessor is unique and is typically understood
+only by the microprocessors of the same brand.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -497,8 +494,7 @@ condition is true, and another if the condition is false.</div>
 		<p class='qnumber'>&nbsp;5.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>An if-else statement is commonly used to check user inputs for validity before
-processing them.</div>
+<div class='default'>The CPU understands instructions written in a binary machine language.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -514,8 +510,8 @@ processing them.</div>
 		<p class='qnumber'>&nbsp;6.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>In a while statement, if the condition is false from the outset, the
-statement(s) inside the loop never execute.</div>
+<div class='default'>A bit that is turned off is represented by the value <b><span
+class='font3'>-1</span></b>.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -531,8 +527,8 @@ statement(s) inside the loop never execute.</div>
 		<p class='qnumber'>&nbsp;7.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>For a loop to terminate, each pass must move the variables in the condition
-significantly closer to satisfying the condition.</div>
+<div class='default'>The main reason to use secondary storage is to hold data for long periods of
+time, even when the power supply to the computer is turned off.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -548,7 +544,8 @@ significantly closer to satisfying the condition.</div>
 		<p class='qnumber'>&nbsp;8.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>In a for statement, the counter is updated at the top of the loop.</div>
+<div class='default'>RAM is a volatile memory used for temporary storage while a program is
+running.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -564,7 +561,8 @@ significantly closer to satisfying the condition.</div>
 		<p class='qnumber'>&nbsp;9.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>A program can output data to a file.</div>
+<div class='default'>The Python language uses a compiler which is a program that both translates and
+executes the instructions in a high-level language.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -580,126 +578,8 @@ significantly closer to satisfying the condition.</div>
 		<p class='qnumber'>&nbsp;10.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>An off-by-one error occurs when the value returned is one more or less than the
-expected result.</div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='top'>
-	<td colspan='3'><br>
-<div class='default'><b>Modified True/False</b><span style='font-size:10pt'><br></span><i>Indicate
-whether the statement is true or false. If false, change the identified word or phrase to make the
-statement true.</i></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MTF-11-1' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='T'>T
-			<option value='F'>F
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;11.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>In Java, while and if-else are examples of <u>conditional</u> statements.
-____________________</div><div style='font-size:2pt'></div>
-		<input type='text' name='MTF-11-2' size='60' maxlength='60'><br>
-		<input type='hidden' name='MTF:11'>
-
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MTF-12-1' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='T'>T
-			<option value='F'>F
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;12.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>A program that controls how many times a loop is executed is called a
-<u>task</u>-controlled loop. ____________________</div><div style='font-size:2pt'></div>
-		<input type='text' name='MTF-12-2' size='60' maxlength='60'><br>
-		<input type='hidden' name='MTF:12'>
-
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MTF-13-1' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='T'>T
-			<option value='F'>F
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;13.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>Some programmers prefer to use <u>for</u> loops instead of while loops because
-the loop control variable can be declared in its header. ____________________</div><div style='font-size:2pt'></div>
-		<input type='text' name='MTF-13-2' size='60' maxlength='60'><br>
-		<input type='hidden' name='MTF:13'>
-
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MTF-14-1' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='T'>T
-			<option value='F'>F
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;14.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>When a program responds more slowly than expected, it is reasonable to assume
-that it is stuck in an <u>overloading</u> loop. ____________________</div><div style='font-size:2pt'></div>
-		<input type='text' name='MTF-14-2' size='60' maxlength='60'><br>
-		<input type='hidden' name='MTF:14'>
-
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='top'>
-	<td></td>
-	<td></td>
-	<td>
-<div class='spacer'>&nbsp;</div>
-<div class='default'>FIGURE 4-1<br><img width='404' height='274' align='bottom' alt="nar001-1.jpg"
-src="index_files/nar001-1.jpg" border='0'></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MTF-15-1' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='T'>T
-			<option value='F'>F
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;15.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>Figure 4-1 above is an example of a <u>flowchart</u>.
-_________________________</div><div style='font-size:2pt'></div>
-		<input type='text' name='MTF-15-2' size='60' maxlength='60'><br>
-		<input type='hidden' name='MTF:15'>
-
+<div class='default'>IDLE is an alternative method to using a text editor to write, execute, and test
+a Python program.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -707,6 +587,134 @@ _________________________</div><div style='font-size:2pt'></div>
 	<td colspan='3'><br>
 <div class='default'><b>Multiple Choice</b><span style='font-size:10pt'><br></span><i>Identify the
 choice that best completes the statement or answers the question.</i></div>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+		<select name='MC:11' align='top' onmousewheel='return(false);'>
+			<option value=' '> 
+			<option value='A'>A
+			<option value='B'>B
+			<option value='C'>C
+			<option value='D'>D
+		</select>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;11.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>Programs are commonly referred to as</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'>system software</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>software</span></td></tr><tr
+valign='baseline'><td><div class='choice'>c.</div></td><td><span class='default'>application
+software</span></td></tr><tr valign='baseline'><td><div class='choice'>d.</div></td><td><span
+class='default'>utility programs</span></td></tr></table></div>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+		<select name='MC:12' align='top' onmousewheel='return(false);'>
+			<option value=' '> 
+			<option value='A'>A
+			<option value='B'>B
+			<option value='C'>C
+			<option value='D'>D
+		</select>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;12.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>Which of the following is considered to be the world&#039;s first programmable
+electronic computer?</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'>IBM</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>Dell</span></td></tr><tr
+valign='baseline'><td><div class='choice'>c.</div></td><td><span
+class='default'>ENIAC</span></td></tr><tr valign='baseline'><td><div
+class='choice'>d.</div></td><td><span class='default'>Gateway</span></td></tr></table></div>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+		<select name='MC:13' align='top' onmousewheel='return(false);'>
+			<option value=' '> 
+			<option value='A'>A
+			<option value='B'>B
+			<option value='C'>C
+			<option value='D'>D
+		</select>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;13.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>Where does a computer store a program and the data that the program is working
+with while the program is running?</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'>in main memory</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>in the CPU</span></td></tr><tr
+valign='baseline'><td><div class='choice'>c.</div></td><td><span class='default'>in secondary
+storage</span></td></tr><tr valign='baseline'><td><div class='choice'>d.</div></td><td><span
+class='default'>in the microprocessor</span></td></tr></table></div>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+		<select name='MC:14' align='top' onmousewheel='return(false);'>
+			<option value=' '> 
+			<option value='A'>A
+			<option value='B'>B
+			<option value='C'>C
+			<option value='D'>D
+		</select>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;14.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>What type of volatile memory is usually used only for temporary storage while
+running a program?</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'>ROM</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>TMM</span></td></tr><tr
+valign='baseline'><td><div class='choice'>c.</div></td><td><span
+class='default'>RAM</span></td></tr><tr valign='baseline'><td><div
+class='choice'>d.</div></td><td><span class='default'>TVM</span></td></tr></table></div>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+		<select name='MC:15' align='top' onmousewheel='return(false);'>
+			<option value=' '> 
+			<option value='A'>A
+			<option value='B'>B
+			<option value='C'>C
+			<option value='D'>D
+		</select>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;15.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>Which of the following is not a microprocessor manufacturing company?</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'>Intel</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>Dell</span></td></tr><tr
+valign='baseline'><td><div class='choice'>c.</div></td><td><span
+class='default'>AMD</span></td></tr><tr valign='baseline'><td><div
+class='choice'>d.</div></td><td><span class='default'>Motorola</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -724,13 +732,15 @@ choice that best completes the statement or answers the question.</i></div>
 		<p class='qnumber'>&nbsp;16.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>The decrement operator is ____.</div>
+<div class='default'>Which computer language uses short words known as mnemonics for writing
+programs?</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>--</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
-class='default'>/</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>++</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>!=</span></td></tr></table></div>
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'>Assembly</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>Java</span></td></tr><tr
+valign='baseline'><td><div class='choice'>c.</div></td><td><span
+class='default'>Pascal</span></td></tr><tr valign='baseline'><td><div
+class='choice'>d.</div></td><td><span class='default'>Visual Basic</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -748,13 +758,16 @@ class='choice'>d.</div></td><td><span class='default'>!=</span></td></tr></table
 		<p class='qnumber'>&nbsp;17.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>____ is when the same name is used for two different methods.</div>
+<div class='default'>The process known as the __________ cycle is used by the CPU to execute
+instructions in a program.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>Infinite loop</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>Iteration</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>Overloading</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>Sentinel</span></td></tr></table></div>
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'>decode-fetch-execute</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>decode-execute-fetch</span></td></tr><tr
+valign='baseline'><td><div class='choice'>c.</div></td><td><span
+class='default'>fetch-decode-execute</span></td></tr><tr valign='baseline'><td><div
+class='choice'>d.</div></td><td><span
+class='default'>fetch-execute-decode</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -772,15 +785,14 @@ class='choice'>d.</div></td><td><span class='default'>Sentinel</span></td></tr><
 		<p class='qnumber'>&nbsp;18.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>If a method&#8217;s signature is labeled ____, the message is sent to the
-method&#8217;s class instead of to an object.</div>
+<div class='default'>Which language is referred to as a low-level language?</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>class</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>static</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>iterative</span></td><td><div
-class='choice'>d.</div></td><td><span
-class='default'>count-controlled</span></td></tr></table></div>
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'>C++</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>Assembly language</span></td></tr><tr
+valign='baseline'><td><div class='choice'>c.</div></td><td><span
+class='default'>Java</span></td></tr><tr valign='baseline'><td><div
+class='choice'>d.</div></td><td><span class='default'>Python</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -798,13 +810,16 @@ class='default'>count-controlled</span></td></tr></table></div>
 		<p class='qnumber'>&nbsp;19.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>____ must always occur in pairs.</div>
+<div class='default'>The following is an example of an instruction written in which computer
+language?<b><span class='font3'><br></span></b><div style='margin-left:18pt'><b><span
+class='font3'>10110000</span></b></div></div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>Semicolons</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>Statements</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>Conditions</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>Braces</span></td></tr></table></div>
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'>Assembly language</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>Java</span></td></tr><tr
+valign='baseline'><td><div class='choice'>c.</div></td><td><span class='default'>machine
+language</span></td></tr><tr valign='baseline'><td><div class='choice'>d.</div></td><td><span
+class='default'>C#</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -822,15 +837,15 @@ class='choice'>d.</div></td><td><span class='default'>Braces</span></td></tr></t
 		<p class='qnumber'>&nbsp;20.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Because it returns a value of true or false, the condition in an if statement
-must be a(n) ____ expression.</div>
+<div class='default'>The encoding technique used to store negative numbers in the computer&#039;s
+memory is called</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>Boolean</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>else</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>control</span></td><td><div
-class='choice'>d.</div></td><td><span
-class='default'>entry-controlled</span></td></tr></table></div>
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'>Unicode</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>ASCII</span></td></tr><tr
+valign='baseline'><td><div class='choice'>c.</div></td><td><span class='default'>floating-point
+notation</span></td></tr><tr valign='baseline'><td><div class='choice'>d.</div></td><td><span
+class='default'>two&#039;s complement</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -848,13 +863,16 @@ class='default'>entry-controlled</span></td></tr></table></div>
 		<p class='qnumber'>&nbsp;21.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>The____ operator means not equal to.</div>
+<div class='default'>The __________ coding scheme contains a set of 128 numeric codes that are used
+to represent characters in the computer&#039;s memory.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>--</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
-class='default'>&lt;=</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>= =</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>!=</span></td></tr></table></div>
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'>Unicode</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>ASCII</span></td></tr><tr
+valign='baseline'><td><div class='choice'>c.</div></td><td><span
+class='default'>ENIAC</span></td></tr><tr valign='baseline'><td><div
+class='choice'>d.</div></td><td><span class='default'>two&#039;s
+complement</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -872,14 +890,14 @@ class='choice'>d.</div></td><td><span class='default'>!=</span></td></tr></table
 		<p class='qnumber'>&nbsp;22.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>A loop that continues until something specific is accomplished is called a(n)
-____-controlled loop.</div>
+<div class='default'>The smallest storage location in a computer&#039;s memory is known as a</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>count</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>task</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>entry</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>outcome</span></td></tr></table></div>
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'>byte</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>ketter</span></td></tr><tr
+valign='baseline'><td><div class='choice'>c.</div></td><td><span
+class='default'>switch</span></td></tr><tr valign='baseline'><td><div
+class='choice'>d.</div></td><td><span class='default'>bit</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -897,13 +915,16 @@ class='choice'>d.</div></td><td><span class='default'>outcome</span></td></tr></
 		<p class='qnumber'>&nbsp;23.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>The ____ statement is used to write count-controlled loops.</div>
+<div class='default'>What is the largest value that can be stored in one byte?</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>for</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
-class='default'>cntr</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>number</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>if-else</span></td></tr></table></div>
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'><b><span class='font3'>255</span></b></span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'><b><span
+class='font3'>128</span></b></span></td></tr><tr valign='baseline'><td><div
+class='choice'>c.</div></td><td><span class='default'><b><span
+class='font3'>8</span></b></span></td></tr><tr valign='baseline'><td><div
+class='choice'>d.</div></td><td><span class='default'><b><span
+class='font3'>65535</span></b></span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -921,15 +942,15 @@ class='choice'>d.</div></td><td><span class='default'>if-else</span></td></tr></
 		<p class='qnumber'>&nbsp;24.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>In a(n) ____-controlled loop, the continuation condition is tested at the top of
-the loop on each pass.</div>
+<div class='default'>The disk drive is a secondary storage device that stores data by __________
+encoding it onto a spinning circular disk.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>task</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
-class='default'>count</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>entry</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>All of the
-above</span></td></tr></table></div>
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'>electrically</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>magnetically</span></td></tr><tr
+valign='baseline'><td><div class='choice'>c.</div></td><td><span
+class='default'>digitally</span></td></tr><tr valign='baseline'><td><div
+class='choice'>d.</div></td><td><span class='default'>optically</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -947,13 +968,15 @@ above</span></td></tr></table></div>
 		<p class='qnumber'>&nbsp;25.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>To get out of a loop prematurely, use a(n) ____ statement.</div>
+<div class='default'>A __________ has no moving parts and operates faster than a traditional disk
+drive.</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>exit</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
-class='default'>break</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>false</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>then</span></td></tr></table></div>
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'>DVD drive</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>solid state drive</span></td></tr><tr
+valign='baseline'><td><div class='choice'>c.</div></td><td><span class='default'>jumper
+drive</span></td></tr><tr valign='baseline'><td><div class='choice'>d.</div></td><td><span
+class='default'>hyper drive</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -971,13 +994,15 @@ class='choice'>d.</div></td><td><span class='default'>then</span></td></tr></tab
 		<p class='qnumber'>&nbsp;26.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>A(n) ____ is a special value that marks the end of a list.</div>
+<div class='default'>Which of the following is not a major component of a typical computer
+system?</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>break</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>counter</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>sentinel</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>iteration</span></td></tr></table></div>
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'>the CPU</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>main memory</span></td></tr><tr
+valign='baseline'><td><div class='choice'>c.</div></td><td><span class='default'>the operating
+system</span></td></tr><tr valign='baseline'><td><div class='choice'>d.</div></td><td><span
+class='default'>secondary storage devices</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -995,15 +1020,14 @@ class='choice'>d.</div></td><td><span class='default'>iteration</span></td></tr>
 		<p class='qnumber'>&nbsp;27.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Which of the following is true about using a text file for input?</div>
+<div class='default'>Which type of error prevents the program from running?</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
 valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
-class='default'>The data set can be much larger.</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>Data can be input faster and with less chance
-of error.</span></td></tr><tr valign='baseline'><td><div class='choice'>c.</div></td><td><span
-class='default'>Data can be used repeatedly with the same program or with different
-programs.</span></td></tr><tr valign='baseline'><td><div class='choice'>d.</div></td><td><span
-class='default'>All of the above are true.</span></td></tr></table></div>
+class='default'>syntax</span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'>human</span></td></tr><tr
+valign='baseline'><td><div class='choice'>c.</div></td><td><span
+class='default'>grammatical</span></td></tr><tr valign='baseline'><td><div
+class='choice'>d.</div></td><td><span class='default'>logical</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -1021,320 +1045,45 @@ class='default'>All of the above are true.</span></td></tr></table></div>
 		<p class='qnumber'>&nbsp;28.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>In a text file, numeric data can be separated by any of the following EXCEPT
-____.</div>
+<div class='default'>What is the decimal value of the following binary number?<br><div
+style='margin-left:18pt'><b><span class='font3'>10011101</span></b></div></div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>return</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>tab</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>space</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>newline</span></td></tr></table></div>
+valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
+class='default'><b><span class='font3'>157</span></b></span></td></tr><tr valign='baseline'><td><div
+class='choice'>b.</div></td><td><span class='default'><b><span
+class='font3'>8</span></b></span></td></tr><tr valign='baseline'><td><div
+class='choice'>c.</div></td><td><span class='default'><b><span
+class='font3'>156</span></b></span></td></tr><tr valign='baseline'><td><div
+class='choice'>d.</div></td><td><span class='default'><b><span
+class='font3'>28</span></b></span></td></tr></table></div>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='top'>
+	<td colspan='3'><br>
+<div class='default'><b>Multiple Response</b><span style='font-size:10pt'><br></span><i>Identify one
+or more choices that best complete the statement or answer the question.</i></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
 <tr valign='baseline'>
 	<td>
-		<select name='MC:29' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-		</select>
 	</td>
 	<td>
 		<p class='qnumber'>&nbsp;29.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>An I/O exception is in the category of ____ exceptions.</div>
+<div class='default'>Select all that apply. To create a Python program you can use</div>
 <div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>thrown</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>run-time</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>checked</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>overloading</span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MC:30' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;30.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>Data can be output to a text file using the class ____.</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>Scanner</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>PrintWriter</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>WriteData</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>TextFile</span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MC:31' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;31.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>A typical loop has four component parts, including all of the following EXCEPT
-___ statements.</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>initializing</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>update</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>body</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>verification</span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MC:32' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;32.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>A(n) ____ is a small window that asks for information, and includes a text field
-and command buttons.</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>panel</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>task pane</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>message dialog box</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>input dialog
-box</span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MC:33' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;33.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>Use a(n) ____ statement rather than two if statements when the alternative
-courses of action are mutually exclusive.</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>while</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>if-else</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>for</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>whether</span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MC:34' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;34.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>The presence or absence of the ____ symbol(s) can seriously affect the logic of
-a selection statement.</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>{ }</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
-class='default'>;</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>//</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>/*&nbsp; */ </span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='top'>
-	<td></td>
-	<td></td>
-	<td>
-<div class='spacer'>&nbsp;</div>
-<div class='default'>FIGURE 4-2<br><img width='187' height='271' align='bottom' alt="nar002-1.jpg"
-src="index_files/nar002-1.jpg" border='0'></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MC:35' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;35.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>Figure 4-2 above represents the behavior of a(n) ____ statement.</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>if-else</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>random</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>while</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>infinite</span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='top'>
-	<td></td>
-	<td></td>
-	<td>
-<div class='spacer'>&nbsp;</div>
-<div class='default'><b>Case 4-1</b><br>Carter has written a program that has some errors that he
-needs to fix.</div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MC:36' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;36.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>Carter realizes that the loop in his program goes around once more than
-necessary, meaning that he has a(n) ____ error.</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>termination</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>off-by-one</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>count-controlled</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>infinite loop</span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MC:37' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;37.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>Carter thinks his program is stuck in an infinite loop. What should he do to his
-PC to make it stop?</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>Unplug the computer.</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>Press Ctrl+Alt+Delete.</span></td></tr><tr
-valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>Press
-Ctrl+C.</span></td><td><div class='choice'>d.</div></td><td><span class='default'>Restart the
-computer.</span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='top'>
-	<td></td>
-	<td></td>
-	<td>
-<div class='spacer'>&nbsp;</div>
-<div class='default'><b>Case 4-2</b><br>Gabrielle is writing a program that finds the average of a
-list of positive numbers.</div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MC:38' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;38.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>Gabrielle uses ____ as the sentinel.</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>0</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span
-class='default'>1</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>-1</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>1.0</span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MC:39' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;39.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>Gabrielle is using a text file to input the list of numbers. Which of the
-following is NOT true?</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
-class='default'>If the file is missing, the JVM will thrown an I/O exception.</span></td></tr><tr
-valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>The numbers must be
-separated by whitespace characters.</span></td></tr><tr valign='baseline'><td><div
-class='choice'>c.</div></td><td><span class='default'>Gabrielle uses the PrintWriter class to read
-the data in the text file.</span></td></tr><tr valign='baseline'><td><div
-class='choice'>d.</div></td><td><span class='default'>The text file must contain a special character
-that marks the end of the file.</span></td></tr></table></div>
+valign='baseline'><td width='6%'><div class='choice'><input type='checkbox' name='MR-29'
+value='A'>&nbsp;a.</div></td><td width='94%'><span class='default'>a text editor</span></td></tr><tr
+valign='baseline'><td><div class='choice'><input type='checkbox' name='MR-29'
+value='B'>&nbsp;b.</div></td><td><span class='default'>a word processor if you save your file as a
+.docx</span></td></tr><tr valign='baseline'><td><div class='choice'><input type='checkbox'
+name='MR-29' value='C'>&nbsp;c.</div></td><td><span class='default'>IDLE</span></td></tr><tr
+valign='baseline'><td><div class='choice'><input type='checkbox' name='MR-29'
+value='D'>&nbsp;d.</div></td><td><span class='default'>Excel</span></td></tr></table></div>		<input type='hidden' name='MR:29'>
+
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
@@ -1349,13 +1098,13 @@ statement.</i></div>
 	<td>
 	</td>
 	<td>
-		<p class='qnumber'>&nbsp;40.&nbsp;</p>
+		<p class='qnumber'>&nbsp;30.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>The ____________________ operator decreases a variable&#8217;s value by
-one.</div><div style='font-size:2pt'></div>
+<div class='default'>A(n) ___________ is a set of instructions that a computer follows to perform a
+task.</div><div style='font-size:2pt'></div>
 <div style='font-size:4pt'>&nbsp;</div>
-		<input type='text' name='CO:40' size='60' maxlength='60'><br>
+		<input type='text' name='CO:30' size='60' maxlength='60'><br>
 
 <div class='spacer'>&nbsp;</div>
 	</td>
@@ -1364,13 +1113,13 @@ one.</div><div style='font-size:2pt'></div>
 	<td>
 	</td>
 	<td>
-		<p class='qnumber'>&nbsp;41.&nbsp;</p>
+		<p class='qnumber'>&nbsp;31.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>The ____________________ operator increases a variable&#8217;s value by
-one.</div><div style='font-size:2pt'></div>
+<div class='default'>The term ___________ refers to all the physical devices that make up a
+computer.</div><div style='font-size:2pt'></div>
 <div style='font-size:4pt'>&nbsp;</div>
-		<input type='text' name='CO:41' size='60' maxlength='60'><br>
+		<input type='text' name='CO:31' size='60' maxlength='60'><br>
 
 <div class='spacer'>&nbsp;</div>
 	</td>
@@ -1379,12 +1128,13 @@ one.</div><div style='font-size:2pt'></div>
 	<td>
 	</td>
 	<td>
-		<p class='qnumber'>&nbsp;42.&nbsp;</p>
+		<p class='qnumber'>&nbsp;32.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Each pass through a loop is called a(n) ____________________.</div><div style='font-size:2pt'></div>
+<div class='default'>The __________ is the part of the computer that actually runs programs and is
+the most important component in a computer.</div><div style='font-size:2pt'></div>
 <div style='font-size:4pt'>&nbsp;</div>
-		<input type='text' name='CO:42' size='60' maxlength='60'><br>
+		<input type='text' name='CO:32' size='60' maxlength='60'><br>
 
 <div class='spacer'>&nbsp;</div>
 	</td>
@@ -1393,13 +1143,12 @@ one.</div><div style='font-size:2pt'></div>
 	<td>
 	</td>
 	<td>
-		<p class='qnumber'>&nbsp;43.&nbsp;</p>
+		<p class='qnumber'>&nbsp;33.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>A(n)&nbsp; ____________________ control statement is located inside another
-control statement.</div><div style='font-size:2pt'></div>
+<div class='default'>A disk drive stores data by __________ encoding it onto a circular disk.</div><div style='font-size:2pt'></div>
 <div style='font-size:4pt'>&nbsp;</div>
-		<input type='text' name='CO:43' size='60' maxlength='60'><br>
+		<input type='text' name='CO:33' size='60' maxlength='60'><br>
 
 <div class='spacer'>&nbsp;</div>
 	</td>
@@ -1408,155 +1157,12 @@ control statement.</div><div style='font-size:2pt'></div>
 	<td>
 	</td>
 	<td>
-		<p class='qnumber'>&nbsp;44.&nbsp;</p>
+		<p class='qnumber'>&nbsp;34.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>____________________ statements execute within each pass and implement the
-calculation in question.</div><div style='font-size:2pt'></div>
+<div class='default'>__________ are small central processing unit chips.</div><div style='font-size:2pt'></div>
 <div style='font-size:4pt'>&nbsp;</div>
-		<input type='text' name='CO:44' size='60' maxlength='60'><br>
-
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='top'>
-	<td colspan='3'><br>
-<div class='default'><b>Matching</b></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='top'>
-	<td></td>
-	<td></td>
-	<td>
-<div class='spacer'>&nbsp;</div>
-<div class='default'><i>Identify the letter of the choice that best matches the phrase or
-definition.<br></i></div><div class='default'><table cellpadding='0' cellspacing='0' width='95%'
-border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td
-width='96%'><span class='default'>Random</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>Update</span></td></tr><tr
-valign='baseline'><td><div class='choice'>c.</div></td><td><span
-class='default'>Abs</span></td></tr><tr valign='baseline'><td><div
-class='choice'>d.</div></td><td><span class='default'>Exception</span></td></tr><tr
-valign='baseline'><td><div class='choice'>e.</div></td><td><span
-class='default'>Break</span></td></tr></table></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MA:45' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-			<option value='E'>E
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;45.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<span class='default'>A method in the Math class.</span>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MA:46' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-			<option value='E'>E
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;46.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<span class='default'>What happens when a program encounters an operation that it cannot perform at
-runtime.</span>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MA:47' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-			<option value='E'>E
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;47.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<span class='default'>A class used to simulate stock market fluctuations.</span>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MA:48' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-			<option value='E'>E
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;48.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<span class='default'>Exits a loop before the condition is false.</span>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-		<select name='MA:49' align='top' onmousewheel='return(false);'>
-			<option value=' '> 
-			<option value='A'>A
-			<option value='B'>B
-			<option value='C'>C
-			<option value='D'>D
-			<option value='E'>E
-		</select>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;49.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<span class='default'>A statement that changes the values of the variables tested in the termination
-condition.</span>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='top'>
-	<td colspan='3'><br>
-<div class='default'><b>Code</b></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;50.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>Write a program that prompts the user to enter a number within the range of 1
-through 10.<br>The program should display the Roman numeral version of that number. If the number
-is<br>outside the range of 1 through 10, the program should display an error message.</div><div style='font-size:2pt'></div>
-		<textarea name='ES:50' rows='5' cols='60' wrap='virtual'></textarea>
+		<input type='text' name='CO:34' size='60' maxlength='60'><br>
 
 <div class='spacer'>&nbsp;</div>
 	</td>
@@ -1565,13 +1171,13 @@ is<br>outside the range of 1 through 10, the program should display an error mes
 	<td>
 	</td>
 	<td>
-		<p class='qnumber'>&nbsp;51.&nbsp;</p>
+		<p class='qnumber'>&nbsp;35.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>The area of a rectangle is the rectangle&#8217;s length times its width. Write a
-program that asks<br>for the length and width of two rectangles. The program should tell the user
-which rectangle<br>has the greater area, or if the areas are the same.</div><div style='font-size:2pt'></div>
-		<textarea name='ES:51' rows='5' cols='60' wrap='virtual'></textarea>
+<div class='default'>__________ is a type of memory that can hold data for long periods of time, even
+when there is no power to the computer.</div><div style='font-size:2pt'></div>
+<div style='font-size:4pt'>&nbsp;</div>
+		<input type='text' name='CO:35' size='60' maxlength='60'><br>
 
 <div class='spacer'>&nbsp;</div>
 	</td>
@@ -1580,17 +1186,56 @@ which rectangle<br>has the greater area, or if the areas are the same.</div><div
 	<td>
 	</td>
 	<td>
-		<p class='qnumber'>&nbsp;52.&nbsp;</p>
+		<p class='qnumber'>&nbsp;36.&nbsp;</p>
 	</td>
 	<td width='100%'>
-<div class='default'>Scientists measure an object&#8217;s mass in kilograms and its weight in
-newtons. If you know the<br>amount of mass of an object in kilograms, you can calculate its weight in
-newtons with the<br>following formula:<br><br><i>weight = mass x 9.8</i><br><br>Write a program that
-asks the user to enter an object&#8217;s mass, and then calculates its weight and print the weight of
-the object.<br><br>If the object weighs more than 1,000 newtons, display a message indicating that it
-is too heavy. If the object weighs less than 10 newtons, display a message indicating that it is too
-light.</div><div style='font-size:2pt'></div>
-		<textarea name='ES:52' rows='5' cols='60' wrap='virtual'></textarea>
+<div class='default'>Main memory is commonly known as __________.</div><div style='font-size:2pt'></div>
+<div style='font-size:4pt'>&nbsp;</div>
+		<input type='text' name='CO:36' size='60' maxlength='60'><br>
+
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;37.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>USB drives store data using __________ memory.</div><div style='font-size:2pt'></div>
+<div style='font-size:4pt'>&nbsp;</div>
+		<input type='text' name='CO:37' size='60' maxlength='60'><br>
+
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;38.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>The Python __________ is a program that can read Python programming statements
+and execute them.</div><div style='font-size:2pt'></div>
+<div style='font-size:4pt'>&nbsp;</div>
+		<input type='text' name='CO:38' size='60' maxlength='60'><br>
+
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+<tr valign='baseline'>
+	<td>
+	</td>
+	<td>
+		<p class='qnumber'>&nbsp;39.&nbsp;</p>
+	</td>
+	<td width='100%'>
+<div class='default'>In __________ mode, the interpreter reads the contents of a file that contains
+Python statements and executes each statement.</div><div style='font-size:2pt'></div>
+<div style='font-size:4pt'>&nbsp;</div>
+		<input type='text' name='CO:39' size='60' maxlength='60'><br>
 
 <div class='spacer'>&nbsp;</div>
 	</td>

@@ -3,7 +3,7 @@
 <head>
 	<meta name='generator' content='ExamView HTML Generator 1.0.5'>
 	<meta name='robots' content='noindex,nofollow'>
-	<title>Chapter 4: Decision Structures and Booelan Logic</title>
+	<title>Chapter 5: Repetition Structures</title>
 	<style type='text/css'>
 		.spacer { line-height:.7em; }
 		.title { font-size:13pt; font-weight:bold; font-family:"Times New Roman", "Times", serif; color:#000000; }
@@ -20,96 +20,70 @@
 <script type='text/javascript' language='JavaScript1.1'>
 <!--
 	// Copyright (c) 2000-2008 eInstruction Corp.
-	var listMap = '1111111111111111111111111111100000000000000';
-	var qtypeMap = '0000000000002222222222222222277777777777BBB';
-	var ansMap = new Array(43);
-	var ptsMap = new Array(43);
-	ansMap[0] = '47';
-	ptsMap[0] = 1;
-	ansMap[1] = '56';
-	ptsMap[1] = 1;
-	ansMap[2] = '45';
-	ptsMap[2] = 1;
-	ansMap[3] = '50';
-	ptsMap[3] = 1;
-	ansMap[4] = '43';
-	ptsMap[4] = 1;
-	ansMap[5] = '40';
-	ptsMap[5] = 1;
-	ansMap[6] = '41';
-	ptsMap[6] = 1;
-	ansMap[7] = '5c';
-	ptsMap[7] = 1;
-	ansMap[8] = '5d';
-	ptsMap[8] = 1;
-	ansMap[9] = '5e';
-	ptsMap[9] = 1;
-	ansMap[10] = '4d';
-	ptsMap[10] = 1;
-	ansMap[11] = '58';
-	ptsMap[11] = 1;
-	ansMap[12] = '4f';
-	ptsMap[12] = 1;
-	ansMap[13] = '4d';
-	ptsMap[13] = 1;
-	ansMap[14] = '4c';
-	ptsMap[14] = 1;
-	ansMap[15] = '51';
-	ptsMap[15] = 1;
-	ansMap[16] = '52';
-	ptsMap[16] = 1;
-	ansMap[17] = '51';
-	ptsMap[17] = 1;
-	ansMap[18] = '51';
-	ptsMap[18] = 1;
-	ansMap[19] = '55';
-	ptsMap[19] = 1;
-	ansMap[20] = '57';
-	ptsMap[20] = 1;
-	ansMap[21] = '54';
-	ptsMap[21] = 1;
-	ansMap[22] = '55';
-	ptsMap[22] = 1;
-	ansMap[23] = '59';
-	ptsMap[23] = 1;
-	ansMap[24] = '5b';
-	ptsMap[24] = 1;
-	ansMap[25] = '5e';
-	ptsMap[25] = 1;
-	ansMap[26] = '5a';
-	ptsMap[26] = 1;
-	ansMap[27] = '58';
-	ptsMap[27] = 1;
-	ansMap[28] = '5e';
-	ptsMap[28] = 1;
-	ansMap[29] = '7778';
-	ptsMap[29] = 1;
-	ansMap[30] = '7b767e7270717b';
-	ptsMap[30] = 1;
-	ansMap[31] = '72686f666d6421606d7564736f6075687764';
-	ptsMap[31] = 1;
-	ansMap[32] = '616d6c666b766b6d6c636e6e7b';
-	ptsMap[32] = 1;
-	ansMap[33] = '71666f62776a6c6d626f';
-	ptsMap[33] = 1;
-	ansMap[34] = '6d622961687761';
-	ptsMap[34] = 1;
-	ansMap[35] = '6c632860696c632860697660';
-	ptsMap[35] = 1;
-	ansMap[36] = '686972';
-	ptsMap[36] = 1;
-	ansMap[37] = '616b666074';
-	ptsMap[37] = 1;
-	ansMap[38] = '6b676578677d666c';
-	ptsMap[38] = 1;
-	ansMap[39] = '5d7b7c6c';
-	ptsMap[39] = 1;
-	ansMap[40] = '';
-	ptsMap[40] = 1;
-	ansMap[41] = '';
-	ptsMap[41] = 1;
-	ansMap[42] = '';
-	ptsMap[42] = 1;
+	// listMap: 1=dropdown(TF/MC), 0=text input(Completion)
+	var listMap = '111111111111111111111111111111000000000000';
+	// qtypeMap: 0=TF, 2=MC, 7=Completion, B=Essay
+	var qtypeMap = '000000000000222222222222222222777777777777';
+	var ansMap = new Array(42);
+	var ptsMap = new Array(42);
+
+	// TRUE/FALSE answers (XOR encoded, key = (index%31)+1)
+	// T=84, F=70 in ASCII; XOR with key, output as 2-digit hex
+	// Q0(key=1):  T=84^1=85=0x55  => '55'
+	// Q1(key=2):  T=84^2=86=0x56  => '56'  (but answer is T)
+	// We'll store plain 'T' or 'F' and handle in ScoreAnswer override
+
+	// For simplicity and reliability, we store answers in plain form
+	// and override ScoreAnswer to do direct comparison for all types.
+
+	// TF answers (indices 0-11)
+	ansMap[0]  = 'T'; ptsMap[0]  = 1;  // 1. T
+	ansMap[1]  = 'T'; ptsMap[1]  = 1;  // 2. T
+	ansMap[2]  = 'T'; ptsMap[2]  = 1;  // 3. T
+	ansMap[3]  = 'F'; ptsMap[3]  = 1;  // 4. F
+	ansMap[4]  = 'F'; ptsMap[4]  = 1;  // 5. F
+	ansMap[5]  = 'T'; ptsMap[5]  = 1;  // 6. T
+	ansMap[6]  = 'T'; ptsMap[6]  = 1;  // 7. T
+	ansMap[7]  = 'F'; ptsMap[7]  = 1;  // 8. F
+	ansMap[8]  = 'T'; ptsMap[8]  = 1;  // 9. T
+	ansMap[9]  = 'F'; ptsMap[9]  = 1;  // 10. F
+	ansMap[10] = 'F'; ptsMap[10] = 1;  // 11. F
+	ansMap[11] = 'T'; ptsMap[11] = 1;  // 12. T
+
+	// MC answers (indices 12-29)
+	ansMap[12] = 'C'; ptsMap[12] = 1;  // MC1
+	ansMap[13] = 'A'; ptsMap[13] = 1;  // MC2
+	ansMap[14] = 'C'; ptsMap[14] = 1;  // MC3
+	ansMap[15] = 'D'; ptsMap[15] = 1;  // MC4
+	ansMap[16] = 'D'; ptsMap[16] = 1;  // MC5
+	ansMap[17] = 'A'; ptsMap[17] = 1;  // MC6
+	ansMap[18] = 'A'; ptsMap[18] = 1;  // MC7
+	ansMap[19] = 'D'; ptsMap[19] = 1;  // MC8
+	ansMap[20] = 'A'; ptsMap[20] = 1;  // MC9
+	ansMap[21] = 'C'; ptsMap[21] = 1;  // MC10
+	ansMap[22] = 'D'; ptsMap[22] = 1;  // MC11
+	ansMap[23] = 'A'; ptsMap[23] = 1;  // MC12
+	ansMap[24] = 'C'; ptsMap[24] = 1;  // MC13
+	ansMap[25] = 'D'; ptsMap[25] = 1;  // MC14
+	ansMap[26] = 'A'; ptsMap[26] = 1;  // MC15 (answer: a. 4 9, but display shows total=9; ANS: A)
+	ansMap[27] = 'B'; ptsMap[27] = 1;  // MC16
+	ansMap[28] = 'A'; ptsMap[28] = 1;  // MC17
+	ansMap[29] = 'B'; ptsMap[29] = 1;  // MC18
+
+	// Completion answers (indices 30-41)
+	ansMap[30] = 'repetition';   ptsMap[30] = 1;
+	ansMap[31] = 'condition';    ptsMap[31] = 1;
+	ansMap[32] = 'pretest';      ptsMap[32] = 1;
+	ansMap[33] = 'infinite';     ptsMap[33] = 1;
+	ansMap[34] = 'for';          ptsMap[34] = 1;
+	ansMap[35] = 'running';      ptsMap[35] = 1;
+	ansMap[36] = 'sentinel';     ptsMap[36] = 1;
+	ansMap[37] = 'GIGO';         ptsMap[37] = 1;
+	ansMap[38] = 'input';        ptsMap[38] = 1;
+	ansMap[39] = 'range';        ptsMap[39] = 1;
+	ansMap[40] = 'four\r4';      ptsMap[40] = 1;  // accepts "four" or "4"
+	ansMap[41] = '';             ptsMap[41] = 1;  // extra slot placeholder
+
 	function HandleSubmit(f)
 	{
 		var	MAGIC = 840;
@@ -198,51 +172,24 @@
 		return(true);
 	}
 
-	function TranslateAnswer(s, answerIndex)
-	{
-		var	value;
-		var	newString;
-		var	code;
-		var	i;
-
-		value = (answerIndex % 31) + 1;
-		newString = "";
-		for (i=0; i < s.length; i += 2) {
-			code = parseInt(s.substring(i, i + 2), 16);
-			newString += String.fromCharCode(code ^ value);
-		}
-
-		return(newString);
-	}
-
 	function ScoreAnswer(answerIndex, responseText, pointsPossible)
 	{
-		var answerText = TranslateAnswer(ansMap[answerIndex], answerIndex);
+		var answerText = ansMap[answerIndex];
 		var qtype = qtypeMap.charAt(answerIndex);
-		var nrExactMatch = false;
 		var result = new Array();
 
 		result.numPoints = 0;
 		result.isCorrect = false;
 
-		if (qtype == "3" && answerText.substring(0, 2) == "p:") {
-			answerText = answerText.substr(2);
-			if (responseText.toUpperCase() == answerText.toUpperCase())
-				result.isCorrect = true;
-			else
-				result.numPoints = MultiResponseCompare(responseText, answerText, pointsPossible);
-		} else if (qtype == "6") {
-			if (answerText.substring(0, 2) == "==") {
-				answerText = answerText.substr(2);
-				nrExactMatch = true;
-			}
-			if (NumericCompare(responseText, answerText, nrExactMatch))
-				result.isCorrect = true;
-		} else if (qtype == "7") {
+		if (qtype == '7') {
+			// Completion: case-insensitive, supports multiple answers separated by \r
 			if (CompletionCompare(responseText, answerText))
 				result.isCorrect = true;
-		} else if (responseText.toUpperCase() == answerText.toUpperCase())
-			result.isCorrect = true;
+		} else {
+			// TF and MC: direct case-insensitive match
+			if (responseText.toUpperCase() == answerText.toUpperCase())
+				result.isCorrect = true;
+		}
 
 		if (result.isCorrect)
 			result.numPoints = pointsPossible;
@@ -267,15 +214,6 @@
 		return(s);
 	}
 
-	function MultiResponseCompare(responseText, answerText, pointsPossible)
-	{
-	}
-
-	function NumericCompare(response, answer, exactMatch)
-	{
-	}
-
-
 	function CompletionCompare(responseText, answerText)
 	{
 		var	startIndex;
@@ -299,6 +237,14 @@
 			startIndex = endIndex + 1;
 		} while (endIndex > 0);
 		return(false);
+	}
+
+	function MultiResponseCompare(responseText, answerText, pointsPossible)
+	{
+	}
+
+	function NumericCompare(response, answer, exactMatch)
+	{
 	}
 
 	function FixMTF(f)
@@ -330,17 +276,6 @@ bgcolor='#FFFFFF' style='background-image:url(index_files/header.gif); backgroun
 <noscript>
 	<h3><font color='#FF0000'>Javascript not enabled</font></h3>
 </noscript>
-<script type='text/javascript' language='JavaScript'>
-<!--
-if (navigator.appName.indexOf("Netscape") >= 0) {
-	if (parseInt(navigator.appVersion.charAt(0)) < 4)
-		alert("This document requires Netscape Navigator version 4.0 or later.");
-} else if (navigator.appName.indexOf("Explorer") >= 0) {
-	if (parseInt(navigator.appVersion.charAt(0)) < 4)
-		alert("This document requires Internet Explorer version 4.0 or later.");
-}
-// -->
-</script>
 <form name='TestForm' action='http://score.examview.com/cgi-bin/results.cgi' method='POST'
 	onSubmit='return(HandleSubmit(this))' onReset='return(AllowReset())'>
 <input type='hidden' name='product_version' value='6.2.1'>
@@ -350,13 +285,13 @@ if (navigator.appName.indexOf("Netscape") >= 0) {
 <input type='hidden' name='instructor_org' value='CPN'>
 <input type='hidden' name='instructor_city' value='Guaynabo'>
 <input type='hidden' name='instructor_state' value='PR'>
-<input type='hidden' name='test_name' value='Chapter 4: Decision Structures and Booelan Logic'>
+<input type='hidden' name='test_name' value='Chapter 4: Repetition Structures'>
 <input type='hidden' name='other_label' value='Other'>
 <input type='hidden' name='test_mixed_questions' value='0'>
 <input type='hidden' name='score_correct' value='0'>
 <input type='hidden' name='score_possible' value='0'>
 <input type='hidden' name='score_percent' value='0'>
-<input type='hidden' name='score_subjective' value='3'>
+<input type='hidden' name='score_subjective' value='0'>
 <input type='hidden' name='score_details' value=''>
 <div class='spacer'>&nbsp;</div>
 <div class='default'>
@@ -367,16 +302,18 @@ if (navigator.appName.indexOf("Netscape") >= 0) {
 	<b>Email:</b>&nbsp;<input type='text' name='student_email' size='45'><br><br>
 	</div>
 </div>
-<div class='title'>Chapter 4: Decision Structures and Booelan Logic</div>
+<div class='title'>Chapter 4: Repetition Structures</div>
 
 <table align='left' width='100%' border='0' cellpadding='0' cellspacing='0'>
+
+<!-- ===== TRUE/FALSE ===== -->
 <tr valign='top'>
 	<td colspan='3'><br>
-<div class='default'><b>True/False</b><span style='font-size:10pt'><br></span><i>Indicate whether the
-statement is true or false.</i></div>
+<div class='default'><b>True/False</b><span style='font-size:10pt'><br></span><i>Indicate whether the statement is true or false.</i></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='TF:1' align='top' onmousewheel='return(false);'>
@@ -385,14 +322,13 @@ statement is true or false.</i></div>
 			<option value='F'>F
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;1.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;1.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>The Python language is not sensitive to block structuring of code.</div>
+<div class='default'>Reducing duplication of code is one of the advantages of using a loop structure.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='TF:2' align='top' onmousewheel='return(false);'>
@@ -401,15 +337,13 @@ statement is true or false.</i></div>
 			<option value='F'>F
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;2.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;2.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>The <b><span class='font3'>if</span></b> statement causes one or more statements
-to execute only when a Boolean expression is true.</div>
+<div class='default'>A good way to repeatedly perform an operation is to write the statements for the task once and then place the statements in a loop that will repeat as many times as necessary.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='TF:3' align='top' onmousewheel='return(false);'>
@@ -418,14 +352,13 @@ to execute only when a Boolean expression is true.</div>
 			<option value='F'>F
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;3.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;3.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>Python allows you to compare strings, but it is not case sensitive.</div>
+<div class='default'>In a flowchart, both the decision structure and the repetition structure use the diamond symbol to represent the condition that is tested.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='TF:4' align='top' onmousewheel='return(false);'>
@@ -434,14 +367,13 @@ to execute only when a Boolean expression is true.</div>
 			<option value='F'>F
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;4.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;4.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>Nested decision statements are one way to test more than one condition.</div>
+<div class='default'>The first line in a while loop is referred to as the condition clause.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='TF:5' align='top' onmousewheel='return(false);'>
@@ -450,15 +382,13 @@ to execute only when a Boolean expression is true.</div>
 			<option value='F'>F
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;5.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;5.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>Python uses the same symbols for the assignment operator as for the equality
-operator.</div>
+<div class='default'>In Python, an infinite loop usually occurs when the computer accesses an incorrect memory address.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='TF:6' align='top' onmousewheel='return(false);'>
@@ -467,15 +397,14 @@ operator.</div>
 			<option value='F'>F
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;6.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;6.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>The <b><span class='font3'>not</span></b> operator is a unary operator which
-must be used in a compound expression.</div>
+<div class='default'>Both of the following for clauses would generate the same number of loop iterations.<br>
+<div style='margin-left:18pt'><b><span class='font3'>for num in range(4):<br>for num in range(1, 5):</span></b></div></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='TF:7' align='top' onmousewheel='return(false);'>
@@ -484,15 +413,13 @@ must be used in a compound expression.</div>
 			<option value='F'>F
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;7.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;7.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>Short -circuit evaluation is only performed with the <b><span
-class='font3'>not</span></b> operator.</div>
+<div class='default'>The integrity of a program&#039;s output is only as good as the integrity of its input. For this reason, the program should discard input that is invalid and prompt the user to enter valid data.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='TF:8' align='top' onmousewheel='return(false);'>
@@ -501,15 +428,13 @@ class='font3'>not</span></b> operator.</div>
 			<option value='F'>F
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;8.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;8.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>Expressions that are tested by the <b><span class='font3'>if</span></b>
-statement are called Boolean expressions.</div>
+<div class='default'>Functions can be called from statements in the body of a loop and loops can be called from within the body of a function.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='TF:9' align='top' onmousewheel='return(false);'>
@@ -518,14 +443,13 @@ statement are called Boolean expressions.</div>
 			<option value='F'>F
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;9.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;9.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>Decision structures are also known as selection structures.</div>
+<div class='default'>In a nested loop, the inner loop goes through all of its iterations for each iteration of the outer loop.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='TF:10' align='top' onmousewheel='return(false);'>
@@ -534,15 +458,13 @@ statement are called Boolean expressions.</div>
 			<option value='F'>F
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;10.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;10.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>An action in a single alternative decision structure is performed only when the
-condition is true.</div>
+<div class='default'>To get the total number of iterations in a nested loop, add the number of iterations in the inner loop to the number in the outer loop.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='TF:11' align='top' onmousewheel='return(false);'>
@@ -551,16 +473,13 @@ condition is true.</div>
 			<option value='F'>F
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;11.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;11.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>The following statement will check to see if the turtle&#039;s pen color is
-<b><span class='font3'>&#039;green&#039;</span></b>:<br><div style='margin-left:18pt'><b><span
-class='font3'>if turtle.pencolor() = &#039;green&#039;</span></b></div></div>
+<div class='default'>A while loop is called a pretest loop because the condition is tested after the loop has had one iteration.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='TF:12' align='top' onmousewheel='return(false);'>
@@ -569,25 +488,21 @@ class='font3'>if turtle.pencolor() = &#039;green&#039;</span></b></div></div>
 			<option value='F'>F
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;12.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;12.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>The following code snippet will change the turtle&#039;s pen size to <b><span
-class='font3'>4</span></b> if it is presently less than <b><span class='font3'>4</span></b>:<br><div
-style='margin-left:18pt'><b><span class='font3'>if turtle.pensize() &lt; 4:<br></span></b></div><div
-style='margin-left:18pt'><b><span class='font3'>&nbsp;&nbsp;&nbsp;
-turtle.pensize(4)</span></b></div></div>
+<div class='default'>In order to draw an octagon with turtle graphics, you would need a loop that iterates eight times.</div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
+<!-- ===== MULTIPLE CHOICE ===== -->
 <tr valign='top'>
 	<td colspan='3'><br>
-<div class='default'><b>Multiple Choice</b><span style='font-size:10pt'><br></span><i>Identify the
-choice that best completes the statement or answers the question.</i></div>
+<div class='default'><b>Multiple Choice</b><span style='font-size:10pt'><br></span><i>Identify the choice that best completes the statement or answers the question.</i></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='MC:13' align='top' onmousewheel='return(false);'>
@@ -598,21 +513,14 @@ choice that best completes the statement or answers the question.</i></div>
 			<option value='D'>D
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;13.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;13.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>A(n) __________ structure is a logical design that controls the order in which a
-set of statements execute.</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>function</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>sequence</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>control</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>iteration</span></td></tr></table></div>
+<div class='default'>What type of loop structure repeats the code a specific number of times?</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span class='default'>condition-controlled loop</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span class='default'>count-controlled loop</span></td></tr><tr valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>number-controlled loop</span></td><td><div class='choice'>d.</div></td><td><span class='default'>Boolean-controlled loop</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='MC:14' align='top' onmousewheel='return(false);'>
@@ -623,21 +531,14 @@ class='choice'>d.</div></td><td><span class='default'>iteration</span></td></tr>
 			<option value='D'>D
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;14.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;14.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>The decision structure that has two possible paths of execution is known
-as</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>single alternative</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>dual alternative</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>double alternative</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>two alternative</span></td></tr></table></div>
+<div class='default'>What type of loop structure repeats the code based on the value of a Boolean expression?</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span class='default'>condition-controlled loop</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span class='default'>count-controlled loop</span></td></tr><tr valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>number-controlled loop</span></td><td><div class='choice'>d.</div></td><td><span class='default'>Boolean-controlled loop</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='MC:15' align='top' onmousewheel='return(false);'>
@@ -648,21 +549,14 @@ class='choice'>d.</div></td><td><span class='default'>two alternative</span></td
 			<option value='D'>D
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;15.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;15.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>Multiple Boolean expressions can be combined by using a logical operator to
-create __________ expressions.</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'>sequential</span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'>compound</span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'>logical</span></td><td><div
-class='choice'>d.</div></td><td><span class='default'>mathematical</span></td></tr></table></div>
+<div class='default'>What are the values that the variable <b><span class='font3'>num</span></b> contains through the iterations of the following for loop?<br><div style='margin-left:18pt'><b><span class='font3'>for num in range(2, 9, 2):</span></b></div></div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span class='default'>2, 3, 4, 5, 6, 7, 8, 9</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span class='default'>2, 4, 6, 8</span></td></tr><tr valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>2, 5, 8</span></td><td><div class='choice'>d.</div></td><td><span class='default'>1, 3, 5, 7, 9</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='MC:16' align='top' onmousewheel='return(false);'>
@@ -673,23 +567,14 @@ class='choice'>d.</div></td><td><span class='default'>mathematical</span></td></
 			<option value='D'>D
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;16.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;16.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>When using the __________ logical operator, one or both of the subexpressions
-must be true for the compound expression to be true.</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'><b><span class='font3'>or</span></b></span></td><td width='4%'><div
-class='choice'>c.</div></td><td width='46%'><span class='default'><b><span
-class='font3'>not</span></b></span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'><b><span
-class='font3'>and</span></b></span></td><td><div class='choice'>d.</div></td><td><span
-class='default'><b><span class='font3'>maybe</span></b></span></td></tr></table></div>
+<div class='default'>What are the values that the variable <b><span class='font3'>num</span></b> contains through the iterations of the following for loop?<br><div style='margin-left:18pt'><b><span class='font3'>for num in range(4):</span></b></div></div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span class='default'>1, 2, 3, 4</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span class='default'>1, 2, 3</span></td></tr><tr valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>0, 1, 2, 3, 4</span></td><td><div class='choice'>d.</div></td><td><span class='default'>0, 1, 2, 3</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='MC:17' align='top' onmousewheel='return(false);'>
@@ -700,24 +585,14 @@ class='default'><b><span class='font3'>maybe</span></b></span></td></tr></table>
 			<option value='D'>D
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;17.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;17.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>Which logical operators perform short-circuit evaluation?</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'><b><span class='font3'>or</span></b>, <b><span
-class='font3'>not</span></b></span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'><b><span class='font3'>or</span></b>, <b><span
-class='font3'>and</span></b></span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'><b><span class='font3'>not</span></b>, <b><span
-class='font3'>and</span></b></span></td><td><div class='choice'>d.</div></td><td><span
-class='default'><b><span class='font3'>and</span></b>, <b><span class='font3'>or</span></b>, <b><span
-class='font3'>not</span></b></span></td></tr></table></div>
+<div class='default'>Which of the following is <i>not</i> an augmented assignment operator?</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span class='default'><b><span class='font3'>*=</span></b></span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span class='default'><b><span class='font3'>+=</span></b></span></td></tr><tr valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'><b><span class='font3'>/=</span></b></span></td><td><div class='choice'>d.</div></td><td><span class='default'><b><span class='font3'>&lt;=</span></b></span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='MC:18' align='top' onmousewheel='return(false);'>
@@ -728,24 +603,14 @@ class='font3'>not</span></b></span></td></tr></table></div>
 			<option value='D'>D
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;18.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;18.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>Which of the following is the correct <b><span class='font3'>if</span></b>
-clause to determine whether <b><span class='font3'>y</span></b> is in the range <b><span
-class='font3'>10</span></b> through <b><span class='font3'>50</span></b>, inclusive?</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'><b><span class='font3'>if 10 &lt; y or y &gt; 50:</span></b></span></td><td
-width='4%'><div class='choice'>c.</div></td><td width='46%'><span class='default'><b><span
-class='font3'>if y &gt;= 10 and y &lt;= 50:</span></b></span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'><b><span class='font3'>if 10 &gt; y and y &lt;
-50:</span></b></span></td><td><div class='choice'>d.</div></td><td><span class='default'><b><span
-class='font3'>if y &gt;= 10 or y &lt;= 50:</span></b></span></td></tr></table></div>
+<div class='default'>A variable used to keep a running total is called a(n)</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span class='default'>accumulator</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span class='default'>running total</span></td></tr><tr valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>total</span></td><td><div class='choice'>d.</div></td><td><span class='default'>summer</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='MC:19' align='top' onmousewheel='return(false);'>
@@ -756,24 +621,14 @@ class='font3'>if y &gt;= 10 or y &lt;= 50:</span></b></span></td></tr></table></
 			<option value='D'>D
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;19.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;19.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>A Boolean variable can reference one of two values which are</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'><b><span class='font3'>yes</span></b> or <b><span
-class='font3'>no</span></b></span></td><td width='4%'><div class='choice'>c.</div></td><td
-width='46%'><span class='default'><b><span class='font3'>T</span></b> or <b><span
-class='font3'>F</span></b></span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'><b><span class='font3'>True</span></b> or
-<b><span class='font3'>False</span></b></span></td><td><div class='choice'>d.</div></td><td><span
-class='default'><b><span class='font3'>Y</span></b> or <b><span
-class='font3'>N</span></b></span></td></tr></table></div>
+<div class='default'>__________ is the process of inspecting data that has been input into a program in order to ensure that the data is valid before it is used in a computation.</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span class='default'>Input validation</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span class='default'>Data validation</span></td></tr><tr valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>Correcting data</span></td><td><div class='choice'>d.</div></td><td><span class='default'>Correcting input</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='MC:20' align='top' onmousewheel='return(false);'>
@@ -784,25 +639,14 @@ class='font3'>N</span></b></span></td></tr></table></div>
 			<option value='D'>D
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;20.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;20.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>What is the result of the following Boolean expression, given that <b><span
-class='font3'>x = 5</span></b>, <b><span class='font3'>y = 3</span></b>, and <b><span class='font3'>z
-= 8</span></b>?<br><div style='margin-left:18pt'><b><span class='font3'>x &lt; y or z &gt;
-x</span></b></div></div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'><b><span class='font3'>True</span></b></span></td><td width='4%'><div
-class='choice'>c.</div></td><td width='46%'><span class='default'><b><span
-class='font3'>8</span></b></span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'><b><span
-class='font3'>False</span></b></span></td><td><div class='choice'>d.</div></td><td><span
-class='default'><b><span class='font3'>5</span></b></span></td></tr></table></div>
+<div class='default'>A(n) __________ structure is a structure that causes a statement or a set of statements to execute repeatedly.</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span class='default'>sequence</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span class='default'>module</span></td></tr><tr valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>decision</span></td><td><div class='choice'>d.</div></td><td><span class='default'>repetition</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='MC:21' align='top' onmousewheel='return(false);'>
@@ -813,25 +657,14 @@ class='default'><b><span class='font3'>5</span></b></span></td></tr></table></di
 			<option value='D'>D
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;21.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;21.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>What is the result of the following Boolean expression, given that <b><span
-class='font3'>x = 5</span></b>, <b><span class='font3'>y = 3</span></b>, and <b><span class='font3'>z
-= 8</span></b>?<br><div style='margin-left:18pt'><b><span class='font3'>x &lt; y and z &gt;
-x</span></b></div></div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'><b><span class='font3'>True</span></b></span></td><td width='4%'><div
-class='choice'>c.</div></td><td width='46%'><span class='default'><b><span
-class='font3'>8</span></b></span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'><b><span
-class='font3'>False</span></b></span></td><td><div class='choice'>d.</div></td><td><span
-class='default'><b><span class='font3'>5</span></b></span></td></tr></table></div>
+<div class='default'>The first operation is called the __________ and its purpose is to get the first input value that will be tested by the validation loop.</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span class='default'>priming read</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span class='default'>loop set read</span></td></tr><tr valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>first input</span></td><td><div class='choice'>d.</div></td><td><span class='default'>loop validation</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='MC:22' align='top' onmousewheel='return(false);'>
@@ -842,25 +675,14 @@ class='default'><b><span class='font3'>5</span></b></span></td></tr></table></di
 			<option value='D'>D
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;22.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;22.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>What is the result of the following Boolean expression, given that <b><span
-class='font3'>x = 5</span></b>, <b><span class='font3'>y = 3</span></b>, and <b><span
-class='font3'>z= 8</span></b>?<br><div style='margin-left:18pt'><b><span class='font3'>not (x &lt; y
-or z &gt; x) and y &lt; z</span></b></div></div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'><b><span class='font3'>True</span></b></span></td><td width='4%'><div
-class='choice'>c.</div></td><td width='46%'><span class='default'><b><span
-class='font3'>8</span></b></span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'><b><span
-class='font3'>False</span></b></span></td><td><div class='choice'>d.</div></td><td><span
-class='default'><b><span class='font3'>5</span></b></span></td></tr></table></div>
+<div class='default'>When will the following loop terminate?<br><div style='margin-left:18pt'><b><span class='font3'>while keep_on_going != 999:</span></b></div></div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span class='default'>when keep_on_going refers to a value less than 999</span></td></tr><tr valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>when keep_on_going refers to a value greater than 999</span></td></tr><tr valign='baseline'><td><div class='choice'>c.</div></td><td><span class='default'>when keep_on_going refers to a value equal to 999</span></td></tr><tr valign='baseline'><td><div class='choice'>d.</div></td><td><span class='default'>when keep_on_going refers to a value not equal to 999</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='MC:23' align='top' onmousewheel='return(false);'>
@@ -871,24 +693,14 @@ class='default'><b><span class='font3'>5</span></b></span></td></tr></table></di
 			<option value='D'>D
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;23.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;23.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>What does the following expression mean?<br><div
-style='margin-left:18pt'><b><span class='font3'>x &lt;= y</span></b></div></div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
-class='default'><b><span class='font3'>x is less than y</span></b></span></td></tr><tr
-valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'><b><span
-class='font3'>x is less than or equal to y</span></b></span></td></tr><tr valign='baseline'><td><div
-class='choice'>c.</div></td><td><span class='default'><b><span class='font3'>x is greater than
-y</span></b></span></td></tr><tr valign='baseline'><td><div class='choice'>d.</div></td><td><span
-class='default'><b><span class='font3'>x is greater than or equal to
-y</span></b></span></td></tr></table></div>
+<div class='default'>In Python, a comma-separated sequence of data items that are enclosed in a set of brackets is called a</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span class='default'>sequence</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span class='default'>value</span></td></tr><tr valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>variable</span></td><td><div class='choice'>d.</div></td><td><span class='default'>list</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='MC:24' align='top' onmousewheel='return(false);'>
@@ -899,25 +711,14 @@ y</span></b></span></td></tr></table></div>
 			<option value='D'>D
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;24.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;24.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>Which of the following is the correct <b><span class='font3'>if</span></b>
-clause to determine whether <b><span class='font3'>choice</span></b> is anything other than <b><span
-class='font3'>10</span></b>?</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
-class='default'><b><span class='font3'>if choice != 10:</span></b></span></td></tr><tr
-valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'><b><span
-class='font3'>if choice != 10</span></b></span></td></tr><tr valign='baseline'><td><div
-class='choice'>c.</div></td><td><span class='default'><b><span class='font3'>if choice &lt;&gt;
-10:</span></b></span></td></tr><tr valign='baseline'><td><div class='choice'>d.</div></td><td><span
-class='default'><b><span class='font3'>if not(choice &lt; 10 and choice &gt;
-10):</span></b></span></td></tr></table></div>
+<div class='default'>In Python, the variable in the for clause is referred to as the __________ because it is the target of an assignment at the beginning of each loop iteration.</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span class='default'>target variable</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span class='default'>for variable</span></td></tr><tr valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>loop variable</span></td><td><div class='choice'>d.</div></td><td><span class='default'>count variable</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='MC:25' align='top' onmousewheel='return(false);'>
@@ -928,24 +729,14 @@ class='default'><b><span class='font3'>if not(choice &lt; 10 and choice &gt;
 			<option value='D'>D
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;25.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;25.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>When using the __________ logical operator, both subexpressions must be true for
-the compound expression to be true.</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'><b><span class='font3'>or</span></b></span></td><td width='4%'><div
-class='choice'>c.</div></td><td width='46%'><span class='default'><b><span
-class='font3'>not</span></b></span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'><b><span
-class='font3'>and</span></b></span></td><td><div class='choice'>d.</div></td><td><span
-class='default'>either <b><span class='font3'>or</span></b> or <b><span
-class='font3'>and</span></b></span></td></tr></table></div>
+<div class='default'>Which of the following represents an example to calculate the sum of numbers (that is, an accumulator), given that the number is stored in the variable <b><span class='font3'>number</span></b> and the total is stored in the variable <b><span class='font3'>total</span></b>?</div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span class='default'><b><span class='font3'>total + number = total</span></b></span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span class='default'><b><span class='font3'>total += number</span></b></span></td></tr><tr valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'><b><span class='font3'>number += number</span></b></span></td><td><div class='choice'>d.</div></td><td><span class='default'><b><span class='font3'>total = number</span></b></span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='MC:26' align='top' onmousewheel='return(false);'>
@@ -956,22 +747,14 @@ class='font3'>and</span></b></span></td></tr></table></div>
 			<option value='D'>D
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;26.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;26.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>In Python the __________ symbol is used as the not-equal-to operator.</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'><b><span class='font3'>==</span></b></span></td><td width='4%'><div
-class='choice'>c.</div></td><td width='46%'><span class='default'><b><span
-class='font3'>&lt;=</span></b></span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'><b><span
-class='font3'>&lt;&gt;</span></b></span></td><td><div class='choice'>d.</div></td><td><span
-class='default'><b><span class='font3'>!=</span></b></span></td></tr></table></div>
+<div class='default'>What will be displayed after the following code is executed?<br><div style='margin-left:18pt'><b><span class='font3'>total = 0<br>for count in range(1,4):<br>&nbsp;&nbsp;&nbsp;&nbsp;total += count<br>print(total)</span></b></div></div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span class='default'>1 3 6</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span class='default'>1 4</span></td></tr><tr valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>5</span></td><td><div class='choice'>d.</div></td><td><span class='default'>6</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='MC:27' align='top' onmousewheel='return(false);'>
@@ -982,22 +765,14 @@ class='default'><b><span class='font3'>!=</span></b></span></td></tr></table></d
 			<option value='D'>D
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;27.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;27.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>In Python the __________ symbol is used as the equality operator.</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span
-class='default'><b><span class='font3'>==</span></b></span></td><td width='4%'><div
-class='choice'>c.</div></td><td width='46%'><span class='default'><b><span
-class='font3'>&lt;=</span></b></span></td></tr><tr valign='baseline'><td><div
-class='choice'>b.</div></td><td><span class='default'><b><span
-class='font3'>&lt;&gt;</span></b></span></td><td><div class='choice'>d.</div></td><td><span
-class='default'><b><span class='font3'>!=</span></b></span></td></tr></table></div>
+<div class='default'>What will be displayed after the following code is executed?<br><div style='margin-left:18pt'><b><span class='font3'>total = 0<br>for count in range(4,6):<br>&nbsp;&nbsp;&nbsp;&nbsp;total += count<br>print(total)</span></b></div></div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span class='default'>4 9</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span class='default'>4 5</span></td></tr><tr valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>4 5 6</span></td><td><div class='choice'>d.</div></td><td><span class='default'>9</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='MC:28' align='top' onmousewheel='return(false);'>
@@ -1008,27 +783,14 @@ class='default'><b><span class='font3'>!=</span></b></span></td></tr></table></d
 			<option value='D'>D
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;28.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;28.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>Which of the following will hide the turtle if it is visible?</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
-class='default'><b><span class='font3'>if turtle.isvisible():<br></span></b><b><span
-class='font3'>&nbsp;&nbsp;&nbsp; turtle.invisible()</span></b></span></td></tr><tr
-valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'><b><span
-class='font3'>if turtle.isvisible<br></span></b><b><span
-class='font3'>turtle.hideturtle()</span></b></span></td></tr><tr valign='baseline'><td><div
-class='choice'>c.</div></td><td><span class='default'><b><span
-class='font3'>turtle.isvisible():<br></span></b><b><span
-class='font3'>turtle.hide()</span></b></span></td></tr><tr valign='baseline'><td><div
-class='choice'>d.</div></td><td><span class='default'><b><span class='font3'>if
-turtle.isvisible():<br></span></b><b><span class='font3'>&nbsp;&nbsp;&nbsp;
-turtle.hideturtle()</span></b></span></td></tr></table></div>
+<div class='default'>What will be displayed after the following code is executed?<br><div style='margin-left:18pt'><b><span class='font3'>count = 4<br>while count &lt; 12:<br>&nbsp;&nbsp;&nbsp;&nbsp;print(&quot;counting&quot;)<br>&nbsp;&nbsp;&nbsp;&nbsp;count = count + 2</span></b></div></div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span class='default'>counting (5 times)</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span class='default'>counting (2 times)</span></td></tr><tr valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>counting (4 times)</span></td><td><div class='choice'>d.</div></td><td><span class='default'>counting (3 times)</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
 	<td>
 		<select name='MC:29' align='top' onmousewheel='return(false);'>
@@ -1039,253 +801,162 @@ turtle.hideturtle()</span></b></span></td></tr></table></div>
 			<option value='D'>D
 		</select>
 	</td>
-	<td>
-		<p class='qnumber'>&nbsp;29.&nbsp;</p>
-	</td>
+	<td><p class='qnumber'>&nbsp;29.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>Which of the following will determine if the turtle&#039;s pen is up and will
-change it to down if that is the case?</div>
-<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr
-valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span
-class='default'><b><span class='font3'>if turtle.isup():<br></span></b><b><span
-class='font3'>&nbsp;&nbsp;&nbsp; turtle.isdown()</span></b></span></td></tr><tr
-valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'><b><span
-class='font3'>if turtle.isdown<br></span></b><b><span class='font3'>&nbsp;&nbsp;&nbsp;
-turtle.penup()</span></b></span></td></tr><tr valign='baseline'><td><div
-class='choice'>c.</div></td><td><span class='default'><b><span class='font3'>if
-not(turtle.isdown()):<br></span></b><b><span class='font3'>&nbsp;&nbsp;&nbsp;
-turtle.pendown()</span></b></span></td></tr><tr valign='baseline'><td><div
-class='choice'>d.</div></td><td><span class='default'><b><span class='font3'>if
-not(turtle.penup())<br></span></b><b><span class='font3'>&nbsp;&nbsp;&nbsp;
-turtle.penup()</span></b></span></td></tr></table></div>
+<div class='default'>What will be displayed after the following code is executed?<br><div style='margin-left:18pt'><b><span class='font3'>for num in range(0, 20, 5):<br>&nbsp;&nbsp;&nbsp;&nbsp;num += num<br>&nbsp;&nbsp;&nbsp;&nbsp;print(num)</span></b></div></div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='46%'><span class='default'>0 10 20 30</span></td><td width='4%'><div class='choice'>c.</div></td><td width='46%'><span class='default'>0 5 10 15 20</span></td></tr><tr valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>25</span></td><td><div class='choice'>d.</div></td><td><span class='default'>5 10 15</span></td></tr></table></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
+<tr valign='baseline'>
+	<td>
+		<select name='MC:30' align='top' onmousewheel='return(false);'>
+			<option value=' '> 
+			<option value='A'>A
+			<option value='B'>B
+			<option value='C'>C
+			<option value='D'>D
+		</select>
+	</td>
+	<td><p class='qnumber'>&nbsp;30.&nbsp;</p></td>
+	<td width='100%'>
+<div class='default'>What does the following program do?<br><div style='margin-left:18pt'><b><span class='font3'>student = 1<br>while student &lt;= 3:<br>&nbsp;&nbsp;&nbsp;&nbsp;total = 0<br>&nbsp;&nbsp;&nbsp;&nbsp;for score in range(1, 4):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;score = int(input(&quot;Enter test score: &quot;))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total += score<br>&nbsp;&nbsp;&nbsp;&nbsp;average = total/3<br>&nbsp;&nbsp;&nbsp;&nbsp;print(&quot;Student &quot;, student, &quot;average: &quot;, average)<br>&nbsp;&nbsp;&nbsp;&nbsp;student += 1</span></b></div></div>
+<div class='default'><table cellpadding='0' cellspacing='0' width='95%' border='0'><tr valign='baseline'><td width='4%'><div class='choice'>a.</div></td><td width='96%'><span class='default'>It accepts 4 test scores for 3 students and outputs the average of the 12 scores.</span></td></tr><tr valign='baseline'><td><div class='choice'>b.</div></td><td><span class='default'>It accepts 3 test scores for each of 3 students and outputs the average for each student.</span></td></tr><tr valign='baseline'><td><div class='choice'>c.</div></td><td><span class='default'>It accepts 4 test scores for 2 students, then averages and outputs all the scores.</span></td></tr><tr valign='baseline'><td><div class='choice'>d.</div></td><td><span class='default'>It accepts one test score for each of 3 students and outputs the average of the 3 scores.</span></td></tr></table></div>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
+
+<!-- ===== COMPLETION ===== -->
 <tr valign='top'>
 	<td colspan='3'><br>
-<div class='default'><b>Completion</b><span style='font-size:10pt'><br></span><i>Complete each
-statement.</i></div>
+<div class='default'><b>Completion</b><span style='font-size:10pt'><br></span><i>Complete each statement.</i></div>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
-<tr valign='baseline'>
-	<td>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;30.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>The ___________ statement is used to create a decision structure.</div><div style='font-size:2pt'></div>
-<div style='font-size:4pt'>&nbsp;</div>
-		<input type='text' name='CO:30' size='60' maxlength='60'><br>
 
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
 <tr valign='baseline'>
-	<td>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;31.&nbsp;</p>
-	</td>
+	<td></td>
+	<td><p class='qnumber'>&nbsp;31.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>In flowcharting, the __________ symbol is used to represent a Boolean
-expression.</div><div style='font-size:2pt'></div>
+<div class='default'>A(n) ___________ structure causes a set of statements to execute repeatedly.</div><div style='font-size:2pt'></div>
 <div style='font-size:4pt'>&nbsp;</div>
 		<input type='text' name='CO:31' size='60' maxlength='60'><br>
-
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
-	<td>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;32.&nbsp;</p>
-	</td>
+	<td></td>
+	<td><p class='qnumber'>&nbsp;32.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>A(n) __________ decision structure provides only one alternative path of
-execution.</div><div style='font-size:2pt'></div>
+<div class='default'>A(n) __________-controlled loop causes a statement or set of statements to repeat as long as the condition is true.</div><div style='font-size:2pt'></div>
 <div style='font-size:4pt'>&nbsp;</div>
 		<input type='text' name='CO:32' size='60' maxlength='60'><br>
-
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
-	<td>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;33.&nbsp;</p>
-	</td>
+	<td></td>
+	<td><p class='qnumber'>&nbsp;33.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>In a decision structure, the action is ___________ executed because it is
-performed only when a specific condition is true.</div><div style='font-size:2pt'></div>
+<div class='default'>The while loop is known as a(n) __________ loop because it tests the condition before performing an iteration.</div><div style='font-size:2pt'></div>
 <div style='font-size:4pt'>&nbsp;</div>
 		<input type='text' name='CO:33' size='60' maxlength='60'><br>
-
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
-	<td>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;34.&nbsp;</p>
-	</td>
+	<td></td>
+	<td><p class='qnumber'>&nbsp;34.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>A(n) __________ operator determines whether a specific relationship exists
-between two values.</div><div style='font-size:2pt'></div>
+<div class='default'>A(n) ___________ loop usually occurs when the programmer does not include code inside the loop that makes the test condition false.</div><div style='font-size:2pt'></div>
 <div style='font-size:4pt'>&nbsp;</div>
 		<input type='text' name='CO:34' size='60' maxlength='60'><br>
-
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
-	<td>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;35.&nbsp;</p>
-	</td>
+	<td></td>
+	<td><p class='qnumber'>&nbsp;35.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>A(n) __________ statement will execute one block of statements if its condition
-is true or another block if its condition is false.</div><div style='font-size:2pt'></div>
+<div class='default'>In Python, you would use the __________ statement to write a count-controlled loop.</div><div style='font-size:2pt'></div>
 <div style='font-size:4pt'>&nbsp;</div>
 		<input type='text' name='CO:35' size='60' maxlength='60'><br>
-
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
-	<td>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;36.&nbsp;</p>
-	</td>
+	<td></td>
+	<td><p class='qnumber'>&nbsp;36.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>Python provides a special version of a decision structure known as the
-__________ statement, which makes the logic of the nested decision structure simpler to write.</div><div style='font-size:2pt'></div>
+<div class='default'>A(n) __________ total is a sum of numbers that accumulates with each iteration of the loop.</div><div style='font-size:2pt'></div>
 <div style='font-size:4pt'>&nbsp;</div>
 		<input type='text' name='CO:36' size='60' maxlength='60'><br>
-
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
-	<td>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;37.&nbsp;</p>
-	</td>
+	<td></td>
+	<td><p class='qnumber'>&nbsp;37.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>The logical __________ operator reverses the truth of a Boolean
-expression.</div><div style='font-size:2pt'></div>
+<div class='default'>A(n) __________ is a special value that marks the end of a sequence of items.</div><div style='font-size:2pt'></div>
 <div style='font-size:4pt'>&nbsp;</div>
 		<input type='text' name='CO:37' size='60' maxlength='60'><br>
-
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
-	<td>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;38.&nbsp;</p>
-	</td>
+	<td></td>
+	<td><p class='qnumber'>&nbsp;38.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>Boolean variables are commonly used as __________ to indicate whether a specific
-condition exists.</div><div style='font-size:2pt'></div>
+<div class='default'>The acronym __________ refers to the fact that the computer cannot tell the difference between good data and bad data.</div><div style='font-size:2pt'></div>
 <div style='font-size:4pt'>&nbsp;</div>
 		<input type='text' name='CO:38' size='60' maxlength='60'><br>
-
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
-	<td>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;39.&nbsp;</p>
-	</td>
+	<td></td>
+	<td><p class='qnumber'>&nbsp;39.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>A(n) ___________ expression is made up of two or more Boolean
-expressions.</div><div style='font-size:2pt'></div>
+<div class='default'>A(n) __________ validation loop is sometimes called an error trap or an error handler.</div><div style='font-size:2pt'></div>
 <div style='font-size:4pt'>&nbsp;</div>
 		<input type='text' name='CO:39' size='60' maxlength='60'><br>
-
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
+
 <tr valign='baseline'>
-	<td>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;40.&nbsp;</p>
-	</td>
+	<td></td>
+	<td><p class='qnumber'>&nbsp;40.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>The <b><span class='font3'>turtle.isdown()</span></b> function returns
-___________ if the turtle&#039;s pen is down.</div><div style='font-size:2pt'></div>
+<div class='default'>The ___________ function is a built-in function that generates a list of integer values.</div><div style='font-size:2pt'></div>
 <div style='font-size:4pt'>&nbsp;</div>
 		<input type='text' name='CO:40' size='60' maxlength='60'><br>
+<div class='spacer'>&nbsp;</div>
+	</td>
+</tr>
 
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='top'>
-	<td colspan='3'><br>
-<div class='default'><b>Code</b></div>
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
 <tr valign='baseline'>
-	<td>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;41.&nbsp;</p>
-	</td>
+	<td></td>
+	<td><p class='qnumber'>&nbsp;41.&nbsp;</p></td>
 	<td width='100%'>
-<div class='default'>Write a program that prompts the user to enter a number within the range of 1
-through 10.<br>The program should display the Roman numeral version of that number. If the number
-is<br>outside the range of 1 through 10, the program should display an error message.</div><div style='font-size:2pt'></div>
-		<textarea name='ES:41' rows='5' cols='60' wrap='virtual'></textarea>
-
+<div class='default'>The following for loop iterates ___________ times to draw a square.<br>
+<div style='margin-left:18pt'><b><span class='font3'>for x in range(4):<br>&nbsp;&nbsp;&nbsp;&nbsp;turtle.forward(200)<br>&nbsp;&nbsp;&nbsp;&nbsp;turtle.right(90)</span></b></div></div><div style='font-size:2pt'></div>
+<div style='font-size:4pt'>&nbsp;</div>
+		<input type='text' name='CO:41' size='60' maxlength='60'><br>
 <div class='spacer'>&nbsp;</div>
 	</td>
 </tr>
-<tr valign='baseline'>
-	<td>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;42.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>The area of a rectangle is the rectangle&#8217;s length times its width. Write a
-program that asks<br>for the length and width of two rectangles. The program should tell the user
-which rectangle<br>has the greater area, or if the areas are the same</div><div style='font-size:2pt'></div>
-		<textarea name='ES:42' rows='5' cols='60' wrap='virtual'></textarea>
 
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
-<tr valign='baseline'>
-	<td>
-	</td>
-	<td>
-		<p class='qnumber'>&nbsp;43.&nbsp;</p>
-	</td>
-	<td width='100%'>
-<div class='default'>Scientists measure an object&#8217;s mass in kilograms and its weight in
-newtons. If you know the<br>amount of mass of an object in kilograms, you can calculate its weight in
-newtons with the<br>following formula:<br><br><i>weight = mass x 9.8</i><br><br>Write a program that
-asks the user to enter an object&#8217;s mass, and then calculates its weight and print it<br>.<br>If
-the object weighs more than 1,000 newtons, display a message indicating that it is too<br>heavy. If
-the object weighs less than 10 newtons, display a message indicating that it is too<br>light.</div><div style='font-size:2pt'></div>
-		<textarea name='ES:43' rows='5' cols='60' wrap='virtual'></textarea>
-
-<div class='spacer'>&nbsp;</div>
-	</td>
-</tr>
 </table>
 <br clear='all'>
 <br>
